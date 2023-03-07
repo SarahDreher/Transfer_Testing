@@ -1,0 +1,2 @@
+The submitted supplementary material contains the programming code of the empirical analysis. 
+This allows the individual steps(data import, pre-processing, model architecture, model training, ...) and the results achieved in a training run to be reproduced.

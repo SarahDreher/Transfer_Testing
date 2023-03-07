@@ -1,0 +1,943 @@
+\documentclass[a4paper, conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+%Packages
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+%\usepackage{float}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+%Commands
+\newcommand{\comment}[1]{}
+
+
+%Beginning
+\begin{document}
+
+%Here goes the title
+\title{Applying Transfer Testing to Identify Annotation Discrepancies in Facial Emotion Data Sets\\}
+%\title{Emotional Facial Data Sets Under Investigation: Empirical Analysis of Data Annotation (In-)Consistency\\}
+%\author{
+%\IEEEauthorblockN{Sarah Dreher}
+%\IEEEauthorblockA{Technology-Transfer-Centre Günzburg\\
+%	Neu-Ulm University of\\
+%	Applied Sciences\\
+%	Neu-Ulm, Germany \\
+%	Sarah.Dreher@hnu.de}
+%\and
+%\IEEEauthorblockN{Jens Gebele}
+%\IEEEauthorblockA{Technology-Transfer-Centre Günzburg\\
+%Neu-Ulm University of\\
+%Applied Sciences\\
+%Neu-Ulm, Germany \\
+%Jens.Gebele@hnu.de}
+%\and
+%\IEEEauthorblockN{Philipp Brune}
+%\IEEEauthorblockA{Technology-Transfer-Centre Günzburg\\
+%Neu-Ulm University of\\
+%Applied Sciences\\
+%Neu-Ulm, Germany \\
+%Philipp.Brune@hnu.de}
+%
+%}
+
+\maketitle
+
+\begin{abstract}
+In recent years, the topic of (facial) emotion recognition has gained considerable attention within the field of Artificial Intelligence (AI). 
+However, the majority of research literature focuses on improvement of algorithms and Machine Learning (ML) models for single data sets. Despite 
+the impressive results achieved, the impact of the (training) data quality with its potential biases and annotation discrepancies is often neglected. Therefore, this paper demonstrates an approach to detect and evaluate annotation label discrepancies between three separate (facial) emotion 
+recognition databases by a transfer test with three ML models. The findings indicate inconsistencies in data annotations of emotional states, implying label bias and/or ambiguity. Our empirical 
+analysis emphasizes the need for more interdisciplinary research to collect high-quality labeled (training) data. Such research is the foundation for 
+developing more accurate AI-based emotion recognition systems, which are also robust in real-life scenarios.\newline
+\end{abstract}
+
+\begin{IEEEkeywords}
+Emotion Recognition, Facial Expression Recognition, Emotional Artificial Intelligence, Transfer Testing, Data Quality
+\end{IEEEkeywords}
+
+
+\section{Introduction}
+
+Over the past few years, there has been significant interest in AI-based emotion recognition both in research and in practical applications. This technology enables machines to identify the emotional state of humans \cite{liDeepFacialExpression2020, melloukFacialEmotionRecognition2020}.
+
+%Emotion recognition systems are becoming more prevalent in various industries. In the field of media and marketing, a solution for detection and analysis of customers' emotions while they consume media content like movies, video clips or advertisement is provided by the company Affectiva \cite{AffectivaHumanizingTechnology2021}. Furthermore the application Replika is an example of an emotional chatbot, that enables meaningful interactions based on human's feelings, emotions and experiences \cite{Replika2021}. Focusing on marketing, such machines enable empathic automatic conversations with customers \cite{davenportHowArtificialIntelligence2020,davoliDriverBehaviorRecognition2020,huangArtificialIntelligenceService2018}.
+
+The use of emotion recognition systems has expanded to various fields, including customer service, emotional support, and personal relationships \cite{AffectivaHumanizingTechnology2021,Replika2021,davenportHowArtificialIntelligence2020,davoliDriverBehaviorRecognition2020,huangArtificialIntelligenceService2018}. %Virtual agents are capable of comforting angry customers, adapting to human expressions, and establishing a more personalized interaction with humans \cite{kristenfrenchYourNewBest2018,huangStrategicFrameworkArtificial2021}.% As a result, the concept of human-machine interaction is being taken to the next level, bringing us closer to the era of emotional AI.
+
+Numerous studies have been conducted to develop emotion recognition technology using various data modalities and classification taxonomies \cite{huangStrategicFrameworkArtificial2021,marin-moralesAffectiveComputingVirtual2018}. %One widely accepted concept suggests that there are six basic emotional states: anger, fear, disgust, happiness, surprise, and sadness \cite{ekmanBasicEmotionsHandbook1999}. Emotion recognition systems employ visual, audio, text, and bio-physiological data modalities to identify these emotions \cite{davenportHowArtificialIntelligence2020,johnsonAdvancingNeuroscienceWearable2020,marin-moralesAffectiveComputingVirtual2018, shoumyMultimodalBigData2020}.
+Facial expression recognition (FER) is one of the most widely used and promising technologies \cite{generosiDeepLearningbasedSystem2018,shaoThreeConvolutionalNeural2019}, mainly due to the fact that human emotions are strongly conveyed through facial expressions \cite{darwinExpressionEmotionsMan1872, tianRecognizingActionUnits2001}. The use of computerized FER has been the subject of extensive research in recent years \cite{liDeepFacialExpression2020, melloukFacialEmotionRecognition2020}.
+
+The primary focus of these studies is to enhance the performance of machine learning models and their architectures as well as the overall model performance \cite{rouastDeepLearningHuman2019}. Although research has mostly centered on individual or a limited number of data sets, not much attention has been given to the underlying data (quality). As a result, the significance of inconsistencies in data annotation and/or labeling ambiguity of emotional states remains poorly understood \cite{ekundayoFacialExpressionRecognition2021}.
+
+This paper aims to investigate potential discrepancies in data annotations of facial emotional databases by comparing the recognition accuracy of individual emotional states across various facial expression databases. Our goal is to gain a better understanding of how recognition results for different emotions vary across different data sets using various model architectures. Therefore, multiply models were trained on one data set and tested on another data set. This process ic called transfer testing. By applying transfer testing, we investigate potential discrepancies in data annotations and provide new insights for future research directions.
+%In this study, the terms data annotation inconsistencies and label ambiguity are treated as synonymous because further research is necessary to differentiate between these concepts.
+%
+%Data inconsistency is defined as errors in the annotation of facial expressions, which means that they are labeled incorrectly. Label ambiguity, on the other hand, suggests that facial expressions may convey multiple emotional states simultaneously \cite{ekundayoFacialExpressionRecognition2021}.
+
+%By exploring the potential deviations, at least one of the two aspects is present. Thus, this study contributes to a better theoretical understanding of facial emotion recognition systems and provides new insights for future research directions.% This work is a continuation of a paper represented in Canada in 2022 \cite{gebeleFaceValueImpact2022}.
+
+The rest of this paper is organized as follows: In section \ref{relwork}, a detailed review of the existing literature on facial emotion recognition is presented, as well as the relevant machine learning techniques and a description of emotional data sets. The research methodology and data used for the systematic analysis will be find in section \ref{method}. In section \ref{results} the accomplished results will be presented and discussed in depth in section \ref{discuss}. The conclusions summarizes our findings.
+
+
+\section{Related Work}
+\label{relwork}
+
+\subsection{Facial Expression Recognition}
+FER combines Psychology \cite{darwinExpressionEmotionsMan1872, ekmanConstantsCulturesFace1971} and Technology (Computer Vision). This interdisciplinary research field aims to infer human's emotional state to gather highly relevant information contained in facial expressions \cite{ekweaririFacialExpressionRecognition2017}, \cite{jaisonReviewFacialEmotion2021}. %In this context, various machine learning models and facial databases have been developed.
+
+Most research on facial emotion recognition is based on Paul Ekman's work. He claims, different cultural backgrounds do not affect dependencies between certain facial expressions and human emotional states \cite{ekmanConstantsCulturesFace1971}. Ekman defined six basic emotional states, namely anger, fear, disgust, happiness, surprise and sadness \cite{darwinExpressionEmotionsMan1872}, \cite{ekmanBasicEmotionsHandbook1999}. Focusing on machine learning, emotion recognition can be differentiated into following four different tasks: Single Label Learning (SLL), SLL Extension (extended by Intensity Estimation), Multi-Label Learning (MLL) and Label Distribution Learning (LDL, \cite{ekundayoFacialExpressionRecognition2021})%\newline
+
+%\begin{itemize}
+%  \item Single Label Learning (SLL)
+%  \item SLL Extension (extended by Intensity Estimation)
+%  \item Multi-Label Learning (MLL)
+%  \item Label Distribution Learning (LDL)
+%\end{itemize}
+
+SLL describes a multi-class machine learning problem. Based on the highest likelihood one emotional class is identified from several possible emotional states in a facial expression. Since, this study focuses on limitations directly linked to SLL \cite{ekundayoFacialExpressionRecognition2021}, the other techniques will not be discussed.
+%The SLL Extension goes beyond that and considers the prevalent intensity of the emotional classes. A measure to define that is the difference between the neutral facial expression and the present facial expression.
+%
+%MLL refers that one single facial expression contains one or more possible emotional states. For LDL the corresponding proportion of an emotion with its occurrence in an image \cite{ekundayoFacialExpressionRecognition2021} is crucial. Even though the development in FER made huge steps, computerized emotion detection is still a challenge for machines \cite{ekweaririFacialExpressionRecognition2017} due to their limitations \cite{ekundayoFacialExpressionRecognition2021}.
+
+Since computers require binary states, research and practice develop machine learning models, which perform well by assigning one emotional class to a facial expression. That is still the main focus of research. By taking a closer look on the models there are certain dependencies between the machine learning approaches, for instance, SLL can be seen as LDL instances \cite{ekundayoFacialExpressionRecognition2021}. This work deals with a two-sided aspect of data annotations in SLL tasks. Firstly, data annotations (labels) can either be manually or automatically generated which can lead to inconsistencies/biases. Secondly, recent research claims that in one facial expressions carries more than one emotional state \cite{ekundayoFacialExpressionRecognition2021}. From past research is known that certain emotional states can be recognized better than others \cite{khaireddinFacialEmotionRecognition2021,quinnRealtimeEmotionRecognition2017}.
+
+These challenges have been investigated on different facial data sets \cite{gebeleFaceValueImpact2022}. By exploring various data sets with one basic CNN model, past research came to the conclusion that not only the size of the data set nor the support of each emotion has influence on the recognition accuracy, the underlying data (label) quality affects this too \cite{gebeleFaceValueImpact2022}. In addition, higher image resolution data sets do not necessarily lead to better recognition results \cite{gebeleFaceValueImpact2022}.
+
+\subsection{Machine Learning Techniques}
+There are different approaches for FER in Machine Learning. A general machine learning process consists of up to three phases. First preprocessing phase, second feature extraction phase, which can be optional, and third emotion recognition or rather classification phase. Different conventional Machine Learning and/or modern Deep Learning methods can be applied within each phase. Conventional Machine Learning methods consist of Support Vector Machine (SVM), Adaptive Boosting (AdaBoost), Random Forest (RF), Decision Tree \cite{ekundayoFacialExpressionRecognition2021}. Deep Learning models extract automatically relevant facial features during training  \cite{liuAdaptiveDeepMetric2017, yangFacialExpressionRecognition2018}. In FER Deep Learning models like Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs) attract attention \cite{ekundayoFacialExpressionRecognition2021}.
+
+A CNN has multiple layers similar to a Deep Neural Network (DNN). A CNN contains convolutional layer(s), pooling layer(s), dense layer(s) and fully connected layer(s). The convolutional layer(s) train the relevant features, starting from low-level features in early layers, up to high-level (abstract) features. The following pooling layer(s), aggregate information and thereby reduce computational complexity \cite{lecunGradientbasedLearningApplied1998}.
+
+A CNN model automatically extracts features. For this reason, separate feature extraction methods like in traditional machine learning algorithms are not necessary \cite{ekundayoFacialExpressionRecognition2021}. Some different popular CNN architectures are listed below in chronological order: LeNet-5 \cite{lecunGradientbasedLearningApplied1998}, AlexNet \cite{krizhevskyImagenetClassificationDeep2012}, GoogleLeNet \cite{szegedyGoingDeeperConvolutions2015a}, VGGNet \cite{simonyanVeryDeepConvolutional2015}, ResNet \cite{heDeepResidualLearning2016}, Xception \cite{cholletXceptionDeepLearning2017}, SENet \cite{huSqueezeandExcitationNetworks2018}. The architectures have evolved and got more complex over the time. Further on, convolutional layers have been stacked directly and inception modules, residual learning (with skip connections) and depthwise separable convolution layer have been developed.
+
+\subsection{Emotional Facial Databases}
+Previous research in FER has led to a lot of facial data-bases. These differ based on data type (static, sequential), data dimension (two-dimensional, three-dimensional), data collection environment (controlled, uncontrolled), and number of facial expressions \cite{ekundayoFacialExpressionRecognition2021}. Databases set up in a controlled environment are for instance The Extended Cohn-Kanade data set (CK+) \cite{p.luceyExtendedCohnKanadeDataset2010} and The Japanese Female Facial Expression (JAFFE) database \cite{lyonsCodingFacialExpressions1998}. Since systems based on these data sets reach only lower performance in real-world scenarios, research demanded for databases collected in an uncontrolled setting. Examples are AffectNet \cite{mollahosseiniAffectnetDatabaseFacial2017} and Real-world Affective Faces Database (RAF-DB) \cite{liReliableCrowdsourcingDeep2017}. Most of these databases include six basic emotional states \cite{ekmanUnmaskingFaceGuide2003}, usually adding one neutral facial expression. Therefore, emotional labels can be annotated manually by experts \cite{mollahosseiniAffectnetDatabaseFacial2017}, by computers or by a combination of these \cite{goodfellowChallengesRepresentationLearning2013}.
+
+
+\section{Methodology}
+\label{method}
+
+\subsection{Technical Environment}
+We implemented all machine learning models on our institute server. It runs on Ubuntu 20.04 LTS, including the NVIDIA data science stack \cite{NVIDIADataScience2021}. The server has two NVIDIA A40 Graphics Processing Units. The code is developed in Python, using Jupyter Notebook as integrated development environment, and made use of these Python frameworks: NumPy, Matplotlib, Pandas, Scikit-Learn, Keras and TensorFlow.
+
+\subsection{Data Collection}
+%Initially, we reviewed over 40 different facial expression databases. Of these, we considered those containing six basic emotions (anger, fear, disgust, happiness, surprise and sadness) \cite{ekmanBasicEmotionsHandbook1999} and one neutral expression. Following that, we excluded multimodal and three-dimensional data sets, as we only focus on facial two-dimensional data sets. This left us with the following databases, for which we then requested access:
+%
+%\begin{itemize}
+%\item FER2013 \cite{goodfellowChallengesRepresentationLearning2013}
+%\item The Cohn Kanade (CK) Dataset \cite{kanadeComprehensiveDatabaseFacial2000}
+%\item CK+ \cite{p.luceyExtendedCohnKanadeDataset2010}
+%\item Acted Facial Expressions in the Wild (AFEW) \cite{dhallEmotionRecognitionWild2014}
+%\item Static Facial Expressions in the Wild (SFEW) \cite{dhallStaticFacialExpressions2011}
+%\item JAFFE \cite{lyonsCodingFacialExpressions1998}
+%\item Karolinska Directed Emotional Faces (KDEF) \cite{lundqvistKarolinskaDirectedEmotional1998}
+%\item Averaged Karolinska Directed Emotional Faces \cite{lundqvistAveragedKarolinskaDirected1998}
+%\item RAF-DB with Basic Emotions \cite{liReliableCrowdsourcingDeep2017}
+%\item AffectNet (Mini Version) \cite{mollahosseiniAffectnetDatabaseFacial2017}\newline
+%%\item EmotioNet \cite{fabianbenitez-quirozEmotionetAccurateRealtime2016}\newline
+%\end{itemize}
+%
+%These databases still differ in size, data type (static, sequential) and data collection environment (controlled, uncontrolled). In the next step, we excluded databases with a size of less than 10,000 instances and/or the ones collected in a controlled environment. The reason is, we aim to have a sufficient quantity of data, more realistic and representative data, as well.
+%
+%As a result of that, the following three databases remained. First, the FER2013 data set, which consist of 35,887 gray images. These were automatically cropped, labeled and then cross-checked by experts. This data set contains seven emotional classes and all images are resized to a format of 48 x 48 pixels \cite{goodfellowChallengesRepresentationLearning2013}.
+%
+%Second, the RAF-DB, with basic emotions, which contains in total 15,339 aligned colorful RGB-images. These were manually annotated by approximately 40 experts and aligned to a size of 100 x 100 pixels \cite{liReliableCrowdsourcingDeep2017}.
+%
+%Third, AffectNet with eight labels (the so-called Mini Version). The smaller version consists of only manually annotated images in RGB-color. In total, 291,650 images with a size of 224 x 224 pixels each. We removed the emotional state contempt, leaving us with the same seven emotions as in the other data sets \cite{mollahosseiniAffectnetDatabaseFacial2017}.
+
+We consider three different data sets which contain the six basic emotions (anger, fear, disgust, happiness, surprise and sadness) with an added neutral facial expression \cite{gebeleFaceValueImpact2022}. In addition, to receive a sufficient quantity of data, as well as a more realistic and representative data, we excluded databases with a size of less than 10,000 instances and/or the ones collected in a controlled environment. The remaining data sets are FER2013, RAF-DB and AffectNet with eight labels (the so-called Mini Version).
+
+FER2013 contains 35,887 gray images, wich are automatically cropped, labeled and then cross-checked by experts. It has seven emotional classes and all images are resized to a format of 48 x 48 pixels \cite{goodfellowChallengesRepresentationLearning2013}. RAF-DB on the other hand has 15,339 aligned colorful RGB-images. All images were manually annotated by about 40 experts and aligned to a size of 100 x 100 pixels \cite{liReliableCrowdsourcingDeep2017}. The mini AffectNet consists of 291,650 only manually annotated images in RGB-color with 224 x 224 pixels each. The emotional state contempt was removed in addition to leave us with the same seven emotions as in the other data sets \cite{mollahosseiniAffectnetDatabaseFacial2017}.
+
+\begin{table}[htbp]
+\caption{Distribution of Emotional Classes per Data Set}
+\begin{center}
+\begin{tabular}{p{1.2cm}>{\raggedleft\arraybackslash}p{0.8cm}>{\raggedleft\arraybackslash}p{0.75cm}>{\raggedleft\arraybackslash}p{0.8cm}>{\raggedleft\arraybackslash}p{0.75cm}>{\raggedleft\arraybackslash}p{0.9cm}>{\raggedleft\arraybackslash}p{0.75cm}} %changed: c| added
+\hline
+%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+\hline %changed:
+Emotion & \multicolumn{2}{c}{FER-2013} & \multicolumn{2}{c}{RAF-DB} & \multicolumn{2}{c}{AffectNet}\\
+\hline
+\hline
+Pixel Size & \multicolumn{2}{c}{48 x 48} & \multicolumn{2}{c}{100 x 100} & \multicolumn{2}{c}{224 x 224} \\
+\hline
+Anger & 4,953 & (14\%) & 867 & (6\%) & 25,382 & (9\%) \\
+Disgust & 547 & (2\%) & 877 & (6\%) & 4,303 & (1\%) \\
+Fear & 5,121 & (14\%) & 355 & (2\%) & 6,878 & (2\%) \\
+Happiness & 8,989 & (25\%) & 5,957 & (39\%) & 134,915 & (47\%) \\
+Sadness & 6,077 & (17\%) & 2,460 & (16\%) & 25,959 & (9\%) \\
+Surprise & 4,002 & (11\%) & 1,619 & (11\%) & 14,590 & (5\%) \\
+Neutral & 6,198 & (17\%) & 3,204 & (21\%) & 75,374 & (26\%) \\
+\hline %changed:
+\hline
+Total & 35,887 & (100\%) & 15,339 & (100\%) & 287,401 & (100\%) \\
+\hline
+%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+
+\subsection{Data Pre-Processing}
+The pre-processing stage covers typically different methods. For instance, face detection, facial landmark localization, face normalization and data augmentation \cite{jaisonReviewFacialEmotion2021}. Face localization is the first step. The previously described data sets have already aligned and cropped images. That is why we limit pre-processing to data normalization and augmentation.
+
+To have equal conditions for the comparison, we resize the images of RAF-DB and AffectNet to the pixel size of FER2013. Since we combine normalization and data augmentation method, we divide each pixel by 255, which results in a range from 0 to 1 for each pixel. The total distribution of the emotional classes is presented in Table \ref{tab1}.
+
+The pixel size is similar on the three different data sets. Most emotional states are sufficiently well represented in all data sets, with a few exceptions. Every data set is split into one training and one test set, with ratios of 80 percent to 20 percent. 30 percent of the training set are used as validation set. By stratifying the splits we keep the proportions of each emotional class equal in training, validation and test set. Since AffectNet is provided with a small test set, we first combine training and test set. After that we split it the same ways as the others.
+By the end of this publication we want to address differences in annotation and label ambiguity between the three data sets. Therefore, we use the trained models on each data set and evaluate these on the other two data sets, i.e. AlexNet, which was trained on RAF-DB, will be evaluated on AffectNet. Since FER2013 only has decolorized images, we turn all images into black and white.
+
+\subsection{Deep Learning Model Architecture}
+As already mentioned, we implement various CNN models. First of all we need to consider that our aim is to compare the emotion recognition accuracy for individual emotional states in different data sets, which does not require beating a certain performance threshold. Hence, we decided to use three models which use stacked CNN layers directly. The first one is AlexNet \cite{krizhevskyImagenetClassificationDeep2012}. % and in Table \ref{AlexNet_struc} the architecture is presented.
+%
+%\begin{table}[htbp]
+%	\caption{AlexNet Architecture using the example of RAF-DB}
+%	\begin{center}
+%		\begin{tabular}{p{1.85cm}p{2.3cm}>{\raggedleft\arraybackslash}p{1.5cm}} %changed: c| added
+%			\hline
+%			%\multicolumn{3}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+%			\hline %changed:
+%			Layer & Output Shape & Parameters \\
+%			\hline
+%			\hline
+%			Conv2D & (None, 12, 12, 96) & 34,944 \\
+%			\hline
+%			MaxPooling2D & (None, 5, 5, 96) & 0 \\
+%			\hline
+%			Conv2D & (None, 5, 5, 256) & 2,973,952 \\
+%			\hline
+%			MaxPooling2D & (None, 2, 2, 256) & 0 \\
+%			\hline
+%			Conv2D & (None, 2, 2, 384) & 885,120 \\
+%			\hline
+%			Conv2D & (None, 2, 2, 384) & 1,327,488 \\
+%			\hline
+%			Conv2D & (None, 2, 2, 256) & 884,992 \\
+%			\hline
+%			MaxPooling2D & (None, 1, 1, 256) & 0 \\
+%			\hline
+%			Flatten & (None, 256) & 0 \\
+%			\hline
+%			Dense & (None, 4,096) & 1,052,672 \\
+%			\hline
+%			Dropout & (None, 4,096) & 0 \\
+%			\hline
+%			Dense & (None, 4,096) & 16,781,312 \\
+%			\hline
+%			Dropout & (None, 4,096) & 0 \\
+%			\hline
+%			Dense & (None, 7) & 28,679 \\
+%			\hline
+%			\hline
+%			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+%		\end{tabular}
+%		\label{AlexNet_struc}
+%	\end{center}
+%\end{table}
+The secound model is a standard CNN model based on AlexNet \cite{krizhevskyImagenetClassificationDeep2012}. In the following this CNN model will be called defaultNet. % and its architecture is structured in Table \ref{tab2}.
+The architecture consists of four blocks, each block contains two convolutional layers followed by one pooling layer. In each convolutional layer, we chose the padding option same and ReLu as activation function. The pooling layer uses max pooling, which generally performs better than average pooling. After a stack of these four blocks, the output is flattened and then two dense layers including dropout follow. In the end, we classify between seven possible emotional states.
+%\begin{table}[htbp]
+%\caption{defaultNet Architecture using the example of RAF-DB}
+%\begin{center}
+%\begin{tabular}{p{1.85cm}p{2.3cm}>{\raggedleft\arraybackslash}p{1.5cm}} %changed: c| added
+%\hline
+%%\multicolumn{3}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+%\hline %changed:
+%Layer & Output Shape & Parameters \\
+%\hline
+%\hline
+%Conv2D & (None, 48, 48, 32) & 2,432 \\
+%\hline
+%Conv2D & (None, 48, 48, 32) & 25,632 \\
+%\hline
+%MaxPooling2D & (None, 24, 24, 32) & 0 \\
+%\hline
+%Conv2D & (None, 24, 24, 64) & 18,496 \\
+%\hline
+%Conv2D & (None, 24, 24, 64) & 36,928 \\
+%\hline
+%MaxPooling2D & (None, 12, 12, 64) & 0 \\
+%\hline
+%Conv2D & (None, 12, 12, 128) & 73,856 \\
+%\hline
+%Conv2D & (None, 12, 12, 128) & 147,584 \\
+%\hline
+%MaxPooling2D & (None, 6, 6, 128) & 0 \\
+%\hline
+%Conv2D & (None, 6, 6, 256) & 295,168 \\
+%\hline
+%Conv2D & (None, 6, 6, 256) & 590,080 \\
+%\hline
+%MaxPooling2D & (None, 3, 3, 256) & 0 \\
+%\hline
+%Flatten & (None, 2,304) & 0 \\
+%\hline
+%Dense & (None, 128) & 295,040 \\
+%\hline
+%Dropout & (None, 128) & 0 \\
+%\hline
+%Dense & (None, 64) & 8,256 \\
+%\hline
+%Dropout & (None, 64) & 0 \\
+%\hline
+%Dense & (None, 7) & 455 \\
+%\hline
+%\hline
+%%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+%\end{tabular}
+%\label{tab2}
+%\end{center}
+%\end{table}
+To consider a more complex model we decided to use VGGNet \cite{simonyanVeryDeepConvolutional2015} as our last model. %The architecture of this model is shown in Table \ref{VGGNet_struc}.
+
+%\begin{table}[htbp]
+%	\caption{VGGNet Architecture using the example of RAF-DB}
+%	\begin{center}
+%		\begin{tabular}{p{1.85cm}p{2.3cm}>{\raggedleft\arraybackslash}p{1.5cm}} %changed: c| added
+%			\hline
+%			%\multicolumn{3}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+%			\hline %changed:
+%			Layer & Output Shape & Parameters \\
+%			\hline
+%			\hline
+%			Conv2D & (None, 48, 48, 64) & 1,792 \\
+%			\hline
+%			Conv2D & (None, 48, 48, 64) & 36,928 \\
+%			\hline
+%			MaxPooling2D & (None, 24, 24, 64) & 0 \\
+%			\hline
+%			Conv2D & (None, 24, 24, 128) & 73,856 \\
+%			\hline
+%			Conv2D & (None, 24, 24, 128) & 147,584 \\
+%			\hline
+%			MaxPooling2D & (None, 12, 12, 128) & 0 \\
+%			\hline
+%			Conv2D & (None, 12, 12, 256) & 295,168 \\
+%			\hline
+%			Conv2D & (None, 12, 12, 256) & 590,080 \\
+%			\hline
+%			Conv2D & (None, 12, 12, 256) & 590,080 \\
+%			\hline
+%			MaxPooling2D & (None, 6, 6, 256) & 0 \\
+%			\hline
+%			Conv2D & (None, 6, 6, 512) & 1,180,160 \\
+%			\hline
+%			Conv2D & (None, 6, 6, 512) & 2,359,808 \\
+%			\hline
+%			Conv2D & (None, 6, 6, 512) & 2,359,808 \\
+%			\hline
+%			MaxPooling2D & (None, 3, 3, 512) & 0 \\
+%			\hline
+%			Conv2D & (None, 3, 3, 512) & 2,359,808 \\
+%			\hline
+%			Conv2D & (None, 3, 3, 512) & 2,359,808 \\
+%			\hline
+%			Conv2D & (None, 3, 3, 512) & 2,359,808 \\
+%			\hline
+%			MaxPooling2D & (None, 1, 1, 512) & 0 \\
+%			\hline
+%			Flatten & (None, 512) & 0 \\
+%			\hline
+%			Dense & (None, 4,096) & 2,101,248 \\
+%			\hline
+%			Dropout & (None, 4,096) & 0 \\
+%			\hline
+%			Dense & (None, 4,096) & 16,781,312 \\
+%			\hline
+%			Dropout & (None, 4,096) & 0 \\
+%			\hline
+%			Dense & (None, 7) & 28,679 \\
+%			\hline
+%			\hline
+%			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+%		\end{tabular}
+%		\label{VGGNet_struc}
+%	\end{center}
+%\end{table}
+
+For training of our models we define 50 epochs and a batch size of 128 for every data set, in order to have the same amount of weight updates. However, the steps per epoch differ due to the different size of the data sets. Furthermore, we use Adam Optimizer starting with a learning rate of 0.0001. This learning rate is dynamic because it is automatically reduced during training, if validation accuracy does not improve for three epochs in a row. At the end, we use on each architecture the model of training epoch with the highest validation accuracy.
+
+
+\section{Results}
+\label{results}
+
+In this section, we present emotion recognition accuracy of the seven basic emotional states for every of the three data sets evaluated for the three architectures. The outcome metrics are limited to precision, recall and F1-score as these are relevant to answering our research question(s). Due to class imbalances, overall accuracy is not very meaningful. Our main focus of the analysis is on the F1-score, which represents the harmonic mean of precision and recall. The following results evaluate the trained models on every test set for each one of the three data sets, i.e. the AlexNet which was trained on RAF-DB will be evaluated on FER2013. Table \ref{f1_scores_FER} shows the evaluation on FER2013 for the trained models. Furthermore, the results for RAF-DB are represented in Table \ref{f1_scores_RAF} and for AffectNet in \ref{f1_scores_Affect}.%\newline
+
+\begin{table}[htbp]
+	\caption{F1-scores on FER2013}
+	\begin{center}
+		\begin{tabular}{>{\raggedleft\arraybackslash}p{0.7cm}p{1.82cm}p{1.55cm}p{1.55cm}p{1.55cm}@{}} %changed: c| added
+			\hline
+			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+			\hline %changed:
+			Count & Emotion & AlexNet & defaultNet & VGGNet \\
+			\hline
+			\hline
+			991 & Anger-FER & 0.34 ($\pm$ 0.03) & 0.49 ($\pm$ 0.01) & 0.46 ($\pm$ 0.01) \\
+			    & Anger-RAF & 0.16 ($\pm$ 0.01) & 0.16 ($\pm$ 0.01) & 0.12 ($\pm$ 0.01) \\
+			    & Anger-Aff & 0.19 ($\pm$ 0.01) & 0.17 ($\pm$ 0.01) & 0.12 ($\pm$ 0.01) \\
+			\hline %changed:
+			109 & Disgust-FER & 0.04 ($\pm$ 0.08) & 0.05 ($\pm$ 0.10) & 0.27 ($\pm$ 0.11) \\
+			    & Disgust-RAF & 0.02 ($\pm$ 0.01) & 0.00 ($\pm$ 0.01) & 0.02 ($\pm$ 0.01) \\
+			    & Disgust-Aff & 0.02 ($\pm$ 0.00) & 0.01 ($\pm$ 0.00) & 0.02 ($\pm$ 0.00) \\
+			\hline %changed:
+			1,024 & Fear-FER & 0.34 ($\pm$ 0.02) & 0.38 ($\pm$ 0.02) & 0.41 ($\pm$ 0.02) \\
+			      & Fear-RAF & 0.08 ($\pm$ 0.04) & 0.05 ($\pm$ 0.02) & 0.14 ($\pm$ 0.03) \\
+			      & Fear-Aff & 0.12 ($\pm$ 0.04) & 0.18 ($\pm$ 0.01) & 0.14 ($\pm$ 0.03) \\
+			\hline %changed:
+			1,798 & Happiness-FER & 0.66 ($\pm$ 0.01) & 0.78 ($\pm$ 0.01) & 0.80 ($\pm$ 0.01) \\
+			      & Happiness-RAF& 0.43 ($\pm$ 0.00) & 0.50 ($\pm$ 0.02) & 0.52 ($\pm$ 0.01) \\
+			      & Happiness-Aff & 0.03 ($\pm$ 0.02) & 0.04 ($\pm$ 0.01) & 0.52 ($\pm$ 0.01) \\
+			\hline %changed:
+			1,216 & Sadness-FER & 0.35 ($\pm$ 0.01) & 0.45 ($\pm$ 0.01) & 0.46 ($\pm$ 0.02) \\
+			      & Sadness-RAF & 0.25 ($\pm$ 0.02) & 0.27 ($\pm$ 0.02) & 0.28 ($\pm$ 0.01) \\
+			      & Sadness-Aff & 0.01 ($\pm$ 0.01) & 0.02 ($\pm$ 0.00) & 0.28 ($\pm$ 0.01) \\
+			\hline %changed:
+			800 & Surprise-FER & 0.64 ($\pm$ 0.00) & 0.71 ($\pm$ 0.01) & 0.73 ($\pm$ 0.01) \\
+			    & Surprise-RAF & 0.10 ($\pm$ 0.02) & 0.05 ($\pm$ 0.01) & 0.06 ($\pm$ 0.03) \\
+			    & Surprise-Aff & 0.00 ($\pm$ 0.00) & 0.00 ($\pm$ 0.00) & 0.06 ($\pm$ 0.00) \\
+			\hline %changed:
+			1,240 & Neutral-FER & 0.44 ($\pm$ 0.02) & 0.53 ($\pm$ 0.01) & 0.52 ($\pm$ 0.01) \\
+			      & Neutral-RAF & 0.24 ($\pm$ 0.02) & 0.26 ($\pm$ 0.03) & 0.20 ($\pm$ 0.03) \\
+			      & Neutral-Aff & 0.07 ($\pm$ 0.02) & 0.07 ($\pm$ 0.01) & 0.20 ($\pm$ 0.01) \\
+			\hline
+			\hline
+			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+		\end{tabular}
+		\label{f1_scores_FER}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{F1-scores on RAF-DB}
+	\begin{center}
+		\begin{tabular}{>{\raggedleft\arraybackslash}p{0.7cm}p{1.82cm}p{1.55cm}p{1.55cm}p{1.55cm}@{}} %changed: c| added
+			\hline
+			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+			\hline %changed:
+			Count & Emotion & AlexNet & defaultNet & VGGNet \\
+			\hline
+			\hline
+			173 & Anger-FER & 0.01 ($\pm$ 0.01) & 0.00 ($\pm$ 0.00) & 0.00 ($\pm$ 0.00) \\
+			    & Anger-RAF & 0.43 ($\pm$ 0.03) & 0.56 ($\pm$ 0.02) & 0.53 ($\pm$ 0.03) \\
+			    & Anger-Aff & 0.00 ($\pm$ 0.00) & 0.00 ($\pm$ 0.00) & 0.02 ($\pm$ 0.04) \\
+			\hline %changed:
+			175 & Disgust-FER & 0.07 ($\pm$ 0.03) & 0.05 ($\pm$ 0.02) & 0.05 ($\pm$ 0.02) \\
+			    & Disgust-RAF & 0.10 ($\pm$ 0.07) & 0.25 ($\pm$ 0.05) & 0.33 ($\pm$ 0.03) \\
+			    & Disgust-Aff & 0.07 ($\pm$ 0.03) & 0.07 ($\pm$ 0.01) & 0.08 ($\pm$ 0.03) \\
+			\hline %changed:
+			71 & Fear-FER & 0.00 ($\pm$ 0.01) & 0.00 ($\pm$ 0.00) & 0.00 ($\pm$ 0.02) \\
+			   & Fear-RAF & 0.22 ($\pm$ 0.03) & 0.32 ($\pm$ 0.08) & 0.29 ($\pm$ 0.05) \\
+			   & Fear-Aff & 0.04 ($\pm$ 0.01) & 0.03 ($\pm$ 0.01) & 0.03 ($\pm$ 0.00) \\
+			\hline %changed:
+			1,192 & Happiness-FER & 0.71 ($\pm$ 0.01) & 0.79 ($\pm$ 0.01) & 0.79 ($\pm$ 0.01) \\
+			      & Happiness-RAF & 0.83 ($\pm$ 0.01) & 0.87 ($\pm$ 0.01) & 0.88 ($\pm$ 0.01) \\
+			      & Happiness-Aff & 0.01 ($\pm$ 0.01) & 0.01 ($\pm$ 0.00) & 0.00 ($\pm$ 0.00) \\
+			\hline %changed:
+			492 & Sadness-FER & 0.29 ($\pm$ 0.01) & 0.38 ($\pm$ 0.01) & 0.38 ($\pm$ 0.03) \\
+			    & Sadness-RAF & 0.50 ($\pm$ 0.02) & 0.54 ($\pm$ 0.02) & 0.57 ($\pm$ 0.03) \\
+			    & Sadness-Aff & 0.01 ($\pm$ 0.01) & 0.01 ($\pm$ 0.00) & 0.02 ($\pm$ 0.01) \\
+			\hline %changed:
+			324 & Surprise-FER & 0.11 ($\pm$ 0.02) & 0.11 ($\pm$ 0.02) & 0.13 ($\pm$ 0.02) \\
+			    & Surprise-RAF & 0.63 ($\pm$ 0.01) & 0.67 ($\pm$ 0.01) & 0.67 ($\pm$ 0.02) \\
+			    & Surprise-Aff & 0.21 ($\pm$ 0.02) & 0.20 ($\pm$ 0.02) & 0.21 ($\pm$ 0.04) \\
+			\hline %changed:
+			641 & Neutral-FER & 0.40 ($\pm$ 0.06) & 0.48 ($\pm$ 0.03) & 0.41 ($\pm$ 0.02) \\
+			    & Neutral-RAF & 0.61 ($\pm$ 0.01) & 0.68 ($\pm$ 0.01) & 0.67 ($\pm$ 0.01) \\
+			    & Neutral-Aff & 0.06 ($\pm$ 0.02) & 0.09 ($\pm$ 0.01) & 0.07 ($\pm$ 0.03) \\
+			\hline
+			\hline
+			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+		\end{tabular}
+		\label{f1_scores_RAF}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{F1-scores on AffectNet}
+	\begin{center}
+		\begin{tabular}{>{\raggedleft\arraybackslash}p{0.7cm}p{1.82cm}p{1.55cm}p{1.55cm}p{1.55cm}@{}} %changed: c| added
+			\hline
+			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+			\hline %changed:
+			Count & Emotion & AlexNet & defaultNet & VGGNet \\
+			\hline
+			\hline
+			5,076 & Anger-FER & 0.14 ($\pm$ 0.02) & 0.12 ($\pm$ 0.00) & 0.10 ($\pm$ 0.01) \\
+			      & Anger-RAF & 0.13 ($\pm$ 0.01) & 0.15 ($\pm$ 0.01) & 0.11 ($\pm$ 0.01) \\
+			      & Anger-Aff & 0.41 ($\pm$ 0.02) & 0.54 ($\pm$ 0.01) & 0.53 ($\pm$ 0.01) \\
+			\hline %changed:
+			861 & Disgust-FER & 0.01 ($\pm$ 0.00) & 0.01 ($\pm$ 0.00) & 0.00 ($\pm$ 0.00) \\
+			    & Disgust-RAF & 0.03 ($\pm$ 0.00) & 0.04 ($\pm$ 0.00) & 0.05 ($\pm$ 0.01) \\
+			    & Disgust-Aff & 0.00 ($\pm$ 0.00) & 0.00 ($\pm$ 0.00) & 0.07 ($\pm$ 0.07) \\
+			\hline %changed:
+			1,376 & Fear-FER & 0.05 ($\pm$ 0.00) & 0.05 ($\pm$ 0.00) & 0.04 ($\pm$ 0.00) \\
+			      & Fear-RAF & 0.04 ($\pm$ 0.00) & 0.06 ($\pm$ 0.01) & 0.06 ($\pm$ 0.01) \\
+			      & Fear-Aff & 0.22 ($\pm$ 0.02) & 0.26 ($\pm$ 0.03) & 0.33 ($\pm$ 0.03) \\
+			\hline %changed:
+			26,983 & Happiness-FER & 0.00 ($\pm$ 0.01) & 0.00 ($\pm$ 0.00) & 0.00 ($\pm$ 0.00) \\
+			       & Happiness-RAF & 0.04 ($\pm$ 0.01) & 0.00 ($\pm$ 0.00) & 0.04 ($\pm$ 0.03) \\
+			       & Happiness-Aff & 0.85 ($\pm$ 0.00) & 0.89 ($\pm$ 0.00) & 0.90 ($\pm$ 0.00) \\
+			\hline %changed:
+			5,192 & Sadness-FER & 0.14 ($\pm$ 0.01) & 0.11 ($\pm$ 0.02) & 0.14 ($\pm$ 0.01) \\
+			      & Sadness-RAF & 0.07 ($\pm$ 0.04) & 0.09 ($\pm$ 0.02) & 0.12 ($\pm$ 0.01) \\
+			      & Sadness-Aff & 0.32 ($\pm$ 0.05) & 0.49 ($\pm$ 0.01) & 0.49 ($\pm$ 0.02) \\
+			\hline %changed:
+			2,918 & Surprise-FER & 0.04 ($\pm$ 0.00) & 0.04 ($\pm$ 0.00) & 0.04 ($\pm$ 0.00) \\
+			      & Surprise-RAF & 0.04 ($\pm$ 0.00) & 0.04 ($\pm$ 0.00) & 0.03 ($\pm$ 0.00) \\
+			      & Surprise-Aff & 0.28 ($\pm$ 0.03) & 0.42 ($\pm$ 0.01) & 0.42 ($\pm$ 0.02) \\
+			\hline %changed:
+			15,075 & Neutral-FER & 0.12 ($\pm$ 0.03) & 0.17 ($\pm$ 0.01) & 0.16 ($\pm$ 0.03) \\
+			       & Neutral-RAF & 0.23 ($\pm$ 0.03) & 0.18 ($\pm$ 0.03) & 0.18 ($\pm$ 0.04) \\
+			       & Neutral-Aff & 0.62 ($\pm$ 0.00) & 0.68 ($\pm$ 0.00) & 0.68 ($\pm$ 0.00) \\
+			\hline
+			\hline
+			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+		\end{tabular}
+		\label{f1_scores_Affect}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Accuracy as Weighted Average}
+	\begin{center}
+		\begin{tabular}{p{1.2cm}p{1.2cm}>{\raggedleft\arraybackslash}p{1.2cm}>{\raggedleft\arraybackslash}p{1.2cm}>{\raggedleft\arraybackslash}p{1.2cm}} %changed: c| added
+			\hline
+			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+			\hline %changed:
+			data set & Trained & AlexNet & defaultNet & VGGNet \\
+			\hline
+			\hline
+			\multirow{3}{*}{FER2013} & FER2013 & 0.47 & 0.56 & 0.58 \\
+			        & RAF-DB & 0.24 & 0.25 & 0.26 \\
+			        & AffectNet & 0.06 & 0.07 & 0.07 \\
+			\hline
+			\multirow{3}{*}{RAF-DB} & FER2013 & 0.42 & 0.49 & 0.47 \\
+			       & RAF-DB & 0.63 & 0.69 & 0.70 \\
+			       & AffectNet & 0.05 & 0.05 & 0.05 \\
+			\hline
+			\multirow{3}{*}{AffectNet} & FER2013 & 0.06 & 0.07 & 0.07 \\
+			          & RAF-DB & 0.10 & 0.07 & 0.09 \\
+			          & AffectNet & 0.65 & 0.72 & 0.72 \\
+			\hline
+			\hline
+			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+		\end{tabular}
+		\label{acc_weighted}
+	\end{center}
+\end{table}
+
+For each data set, we run the model five times in order to address random model initialization. Additionally, the corresponding standard deviation is shown in brackets for every metric. There is a general tendency for emotional classes with higher occurrence to have lower standard deviations, for instance, happy and neutral in the AffectNet data set for every model architecture. The variation in F1-scores for each trained model on remaining data sets is conspicuous. For better impression on the impact of the model on the results Tabel \ref{acc_weighted} displays the accuracy of each model on every data set. In the table we use the weighted average measured on the quantity of images for each emotion.
+
+In the next section, we discuss results, similarities and differences in the recognition accuracy of emotional states and work out possible reasons for this.%\newline
+
+\section{Discussion}
+\label{discuss}
+
+By focusing on the models we conclude that the impact of the models on the result is not the crucial factor. All models tend to the same results. VGGNet, the most complex model, tends to have higher accuracy. Obviously the models trained and tested on the same data set provide the best accuracy.
+The results of our analysis in Table \ref{f1_scores_FER} - \ref{f1_scores_Affect} show that the emotional state happiness is best recognizable in every data set independent of the model while transfer testing on the same data set. Evaluating FER2013 and RAF-DB trained models on these mutual data sets still recognizes happiness the best. AffectNet seems to differ from these two data sets since the recognition ranking vary in order during testing on FER2013 or RAF-DB. Fear and disgust are the most difficult emotional states to recognize in all data sets and for all models except for AffectNet trained ones.
+
+Table \ref{rec_acc_FER} illustrates a ranking of recognition accuracy for every emotional state based on F1-score on FER2013. The same information for RAF-DB is shown in Table \ref{rec_acc_RAF} such as for AffectNet in Table \ref{rec_acc_Affect}. The emotional state surprise in the AffectNet data set represents the major exception in the ranking while training and testing on the same data set. Furthermore, the other emotions hardly vary in order in all three data sets for all models. As soon as we evaluate the AffectNet trained models on one of the remaining data sets we get results which highly vary from the patterns.
+
+\begin{table}[htbp]
+	\caption{Recognition Accuracy Ordinal Ranking on FER2013}
+	\begin{center}
+		\begin{tabular}{p{0.78cm}>{\centering\arraybackslash}p{0.4cm}p{1.6cm}p{1.6cm}p{1.6cm}} %changed: c| added
+			\hline
+			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+			\hline %changed:
+			Trained & Rank & AlexNet & defaultNet & VGGNet \\
+			\hline
+			\hline
+			\multirow{7}{*}{FER} & 1 & Happiness &  Happiness & Happiness \\
+			& 2 & Surprise & Surprise & Surprise \\
+			& 3 & Neutral & Neutral & Neutral \\
+			& 4 & Sadness & Anger & Anger \\
+			& 5 & Fear & Sadness & Sadness \\
+			& 6 & Anger & Fear & Fear \\
+			& 7 & Disgust & Disgust & Disgust \\
+			\hline
+			\multirow{7}{*}{RAF} & 1 & Happiness &  Happiness & Happiness \\
+			& 2 & Sadness & Sadness & Sadness \\
+			& 3 & Neutral & Neutral & Neutral \\
+			& 4 & Anger & Anger & Fear \\
+			& 5 & Surprise & Surprise & Anger \\
+			& 6 & Fear & Fear & Surprise \\
+			& 7 & Disgust & Disgust & Disgust \\
+			\hline
+			\multirow{7}{*}{Aff} & 1 & Anger &  Fear & Fear \\
+			& 2 & Fear & Anger & Anger \\
+			& 3 & Neutral & Neutral & Neutral \\
+			& 4 & Happiness & Happiness & Happiness \\
+			& 5 & Disgust & Sadness & Sadness \\
+			& 6 & Sadness & Disgust & Disgust \\
+			& 7 & Surprise & Surprise & Surprise \\
+			\hline
+			\hline
+			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+		\end{tabular}
+		\label{rec_acc_FER}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Recognition Accuracy Ordinal Ranking on AffectNet}
+	\begin{center}
+		\begin{tabular}{p{0.78cm}>{\centering\arraybackslash}p{0.4cm}p{1.6cm}p{1.6cm}p{1.6cm}} %changed: c| added
+			\hline
+			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+			\hline %changed:
+			Trained & Rank & AlexNet & defaultNet & VGGNet \\
+			\hline
+			\hline
+			\multirow{7}{*}{FER} & 1 & Anger &  Neutral & Neutral \\
+			& 2 & Sadness & Anger & Sadness \\
+			& 3 & Neutral & Sadness & Anger \\
+			& 4 & Fear & Fear & Fear \\
+			& 5 & Surprise & Surprise & Surprise \\
+			& 6 & Disgust & Disgust & Disgust \\
+			& 7 & Happiness & Happiness & Happiness \\
+			\hline
+			\multirow{7}{*}{RAF} & 1 & Neutral &  Neutral & Neutral \\
+			& 2 & Anger & Anger & Sadness \\
+			& 3 & Sadness & Sadness & Anger \\
+			& 4 & Fear & Fear & Fear \\
+			& 5 & Surprise & Disgust & Disgust \\
+			& 6 & Happiness & Surprise & Happiness \\
+			& 7 & Disgust & Happiness & Surprise \\
+			\hline
+			\multirow{7}{*}{Aff} & 1 & Happiness &  Happiness & Happiness \\
+			& 2 & Neutral & Neutral & Neutral \\
+			& 3 & Anger & Anger & Anger \\
+			& 4 & Sadness & Sadness & Sadness \\
+			& 5 & Surprise & Surprise & Surprise \\
+			& 6 & Fear & Fear & Fear \\
+			& 7 & Disgust & Disgust & Disgust \\
+			\hline
+			\hline
+			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+		\end{tabular}
+		\label{rec_acc_Affect}
+	\end{center}
+\end{table}
+
+The results from trained AffectNet models lead to a totally new order in the recognition ranking. Fear is more recognizable whereas happiness is not the best emotion to recognize. The finding of outliers in the comparative ranking are the first indications of data inconsistencies.
+
+\begin{table}[htbp]
+	\caption{Recognition Accuracy Ordinal Ranking on RAF-DB}
+	\begin{center}
+		\begin{tabular}{p{0.78cm}>{\centering\arraybackslash}p{0.4cm}p{1.6cm}p{1.6cm}p{1.6cm}} %changed: c| added
+			\hline
+			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+			\hline %changed:
+			Trained & Rank & AlexNet & defaultNet & VGGNet \\
+			\hline
+			\hline
+			\multirow{7}{*}{FER} & 1 & Happiness &  Happiness & Happiness \\
+			& 2 & Neutral & Neutral & Neutral \\
+			& 3 & Sadness & Sadness & Sadness \\
+			& 4 & Surprise & Surprise & Surprise \\
+			& 5 & Disgust & Disgust & Disgust \\
+			& 6 & Anger & Anger & Anger \\
+			& 7 & Fear & Fear & Fear \\
+			\hline
+			\multirow{7}{*}{RAF} & 1 & Happiness &  Happiness & Happiness \\
+			& 2 & Surprise & Neutral & Surprise \\
+			& 3 & Neutral & Surprise & Neutral \\
+			& 4 & Sadness & Anger & Sadness \\
+			& 5 & Anger & Sadness & Anger \\
+			& 6 & Fear & Fear & Disgust \\
+			& 7 & Disgust & Disgust & Fear \\
+			\hline
+			\multirow{7}{*}{Aff} & 1 & Surprise &  Surprise & Surprise \\
+			& 2 & Disgust & Neutral & Disgust \\
+			& 3 & Neutral & Disgust & Neutral \\
+			& 4 & Fear & Fear & Fear \\
+			& 5 & Happiness & Happiness & Anger \\
+			& 6 & Sadness & Sadness & Sadness \\
+			& 7 & Anger & Anger & Happiness \\
+			\hline
+			\hline
+			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+		\end{tabular}
+		\label{rec_acc_RAF}
+	\end{center}
+\end{table}
+
+
+
+%In addition to the ordinal ranking, we observe differences in the F1-score intervals between the best and worst recognizable emotional state. The trained models which are evaluated on the same data set have higher F1-score ranges. Considering the data set FER2013. For AlexNet trained on FER2013, F1-scores range from 0.66 (highest) to 0.04 (lowest). Switching the model to defaultNet the F1-score range varies from 0.78 (highest) to 0.05 (lowest) and for VGGNet the F1-scores oscillating between 0.80 (highest) and 0.27 (lowest). Focusing on the RAF-DB trained models evaluated on FER2013, we get the F1-score range from 0.43 (highest) to 0.02 (lowest) for AlexNet. DefaultNet has a range between 0.50 (highest) and 0.00 (lowest), whereas VGGNet has F1-scores vary between 0.52 (highest) and 0.02 (lowest). The last point are the models trained on AffectNet. For AlexNet the F1-scores oscillate between 0.19 (highest) and 0.00 (lowest) while the range of F1-scores in defaultNet vary from 0.18 (highest) to 0.00 (lowest). VGGNet has a F1-score range from 0.52 (highest) to 0.02 (lowest). These differences are less pronounced when the last emotion class of the ranking is removed. It is quite plausible to do so, since the last ranked class is also among the classes that are proportionally least present in each data set. By looking on the different data sets the range of F1-scores decreases the most doing training and testing on the same data set. For the overlapping data sets the differences in F1-score range are not significant or not present. %Even then, AffectNet has still the widest F1-score interval from 0.89 (highest) to 0.28 (lowest) between the best and the second worst recognizable emotional state.
+
+%The F1-score intervals on all data sets are illustrated in Table \ref{low_2nd_all}. The proportions of all emotional states are presented in Table \ref{tab1}. We believe that differences in F1-score intervals are an additional indicator of data inconsistencies in facial data.
+
+%\begin{table}[htbp]
+%	\caption{F1-score Intervals Between Highest and (2nd) Lowest Ranked Emotional State on all data sets}
+%	\begin{center}
+%		\begin{tabular}{p{0.4cm}p{1.5cm}>{\centering\arraybackslash}p{2.3cm}>{\centering\arraybackslash}p{3.3cm}} %changed: c| added
+%			\hline
+%			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+%			\hline %changed:
+%			data set & Trained Model & F1-score Interval Highest to Lowest & F1-score Interval Highest to Second Lowest \\
+%			\hline
+%			\hline
+%			\multirow{9}{*}{FER}& FER-Alex &  0.66 - 0.05 & 0.66 - 0.34 \\
+%			& FER-default &  0.78 - 0.05 & 0.78 - 0.34 \\
+%			& FER-VGG &  0.80 - 0.27 & 0.80 - 0.41 \\
+%			\cline{2-4}
+%			& RAF-Alex & 0.43 - 0.02 & 0.43 - 0.08 \\
+%			& RAF-default & 0.50 - 0.00 & 0.50 - 0.05 \\
+%			& RAF-VGG & 0.52 - 0.02 & 0.52 - 0.06 \\
+%			\cline{2-4}
+%			& Aff-Alex & 0.19 - 0.00 & 0.19 - 0.01 \\
+%			& Aff-default & 0.18 - 0.00 & 0.18 - 0.01 \\
+%			& Aff-VGG & 0.52 - 0.02 & 0.52 - 0.06 \\
+%			\hline
+%			\multirow{9}{*}{RAF}& FER-Alex &  0.71 - 0.00 & 0.71 - 0.01 \\
+%			& FER-default &  0.79 - 0.00 & 0.79 - 0.00 \\
+%			& FER-VGG &  0.79 - 0.00 & 0.79 - 0.00 \\
+%			\cline{2-4}
+%			& RAF-Alex & 0.83 - 0.10 & 0.82 - 0.22 \\
+%			& RAF-default & 0.87 - 0.25 & 0.87 - 0.32 \\
+%			& RAF-VGG & 0.88 - 0.29 & 0.88 - 0.33 \\
+%			\cline{2-4}
+%			& Aff-Alex & 0.21 - 0.00 & 0.21 - 0.01 \\
+%			& Aff-default & 0.20 - 0.00 & 0.20 - 0.01 \\
+%			& Aff-VGG & 0.21 - 0.00 & 0.21 - 0.02 \\
+%			\hline
+%			\multirow{9}{*}{Aff}& FER-Alex &  0.14 - 0.00 & 0.14 - 0.01 \\
+%			& FER-default &  0.17 - 0.00 & 0.17 - 0.01 \\
+%			& FER-VGG &  0.16 - 0.00 & 0.16 - 0.00 \\
+%			\cline{2-4}
+%			& RAF-Alex & 0.23 - 0.03 & 0.23 - 0.04 \\
+%			& RAF-default & 0.18 - 0.00 & 0.18 - 0.04 \\
+%			& RAF-VGG & 0.18 - 0.03 & 0.18 - 0.04 \\
+%			\cline{2-4}
+%			& Aff-Alex & 0.85 - 0.00 & 0.85 - 0.22 \\
+%			& Aff-default & 0.89 - 0.00 & 0.89 - 0.26 \\
+%			& Aff-VGG & 0.90 - 0.07 & 0.90 - 0.33 \\
+%			\hline
+%			\hline
+%			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+%		\end{tabular}
+%		\label{low_2nd_all}
+%	\end{center}
+%\end{table}
+
+Furthermore, it is worth taking a closer look on F1-score intervals at every emotion state. There are differences between best and worst F1-score for every emotional state in the data sets. The difference in F1-scores are presented in Table \ref{tab6}.
+
+Focusing disgust, the F1-scores differences are the worst doing training and testing on the same data set. Therefore, we can assume that this emotion has the highest label inconsistency. This is also influenced by the low share of this emotion in every data set, see Table \ref{tab1}. Fear is in AffectNet and RAF-DB underrepresented, too, and accordingly the F1-score difference is high. In FER2013 fear seems to have some label inconsistency, since the corresponding F1-score differences, are always in high position. The strong F1-score variations in certain emotions is a further sign of potential irregularities in the underlying data sets.
+
+%Table \ref{highest_ranges_F1_score} shows an overview of the worst and the second worst F1-score differences among all data sets and models based on Table \ref{tab6}.
+Table \ref{tab6} leads to the conclusion that trained models on AffectNet tend to worst F1-score range among all data sets. This confirms the point that AffectNet differs from the other data sets with reference to label inconsistency and annotation.
+
+\begin{table}[htbp]
+\caption{F1-score Differences per Emotional State across all models and all data sets}
+\begin{center}
+\begin{tabular}{p{0.6cm}p{1.0cm}>{\raggedleft\arraybackslash}p{1.2cm}>{\raggedleft\arraybackslash}p{1.2cm}>{\raggedleft\arraybackslash}p{1.2cm}} %changed: c| added
+\hline
+%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+\hline %changed:
+\multirow{2}{*}{Trained} & \multirow{2}{*}{Emotion} & \multicolumn{3}{c}{Max F1-score differences on} \\
+                         &    & FER2013 & RAF-DB & AffectNet \\
+\hline
+\hline
+\multirow{7}{*}{FER}& Anger    & 0.15 & 0.01 & 0.04 \\ %(FER vs RAF)\\
+                    & Disgust  & 0.23 & 0.02 & 0.01 \\ %(RAF vs. Aff)\\
+                    & Fear     & 0.07 & 0.00 & 0.01 \\ %(Aff vs FER)\\
+                    & Happiness & 0.14 & 0.08 & 0.00 \\ %(FER vs RAF)\\
+                    & Sadness      & 0.11 & 0.09 & 0.03 \\ %(Aff vs. RAF) \\
+                    & Surprise & 0.09 & 0.02 & 0.00 \\ %(Aff vs. RAF/FER)\\
+                    & Neutral  & 0.09 & 0.08 & 0.05 \\ %(FER vs RAF)\\
+\hline
+\multirow{7}{*}{RAF}& Anger    & 0.04 & 0.13 & 0.04 \\
+                    & Disgust  & 0.02 & 0.23 & 0.02 \\
+                    & Fear     & 0.09 & 0.10 & 0.02 \\
+                    & Happiness & 0.09 & 0.05 & 0.04 \\
+                    & Sadness      & 0.03 & 0.07 & 0.05 \\
+                    & Surprise & 0.05 & 0.04 & 0.01 \\
+                    & Neutral  & 0.06 & 0.07 & 0.05 \\
+\hline
+\multirow{7}{*}{Aff}& Anger    & 0.07 & 0.02 & 0.13 \\
+                    & Disgust  & 0.01 & 0.01 & 0.07 \\
+                    & Fear     & 0.06 & 0.01 & 0.11 \\
+                    & Happiness & 0.49 & 0.01 & 0.05 \\
+                    & Sadness   & 0.27 & 0.01 & 0.17 \\
+                    & Surprise & 0.06 & 0.01 & 0.14 \\
+                    & Neutral  & 0.13 & 0.03 & 0.06 \\
+%\hline
+%\multirow{7}{*}{overview}& Angry    & 0.15 & 0.13 & 0.13 \\
+%                    & Disgust  & 0.23 & 0.23 & 0.07 \\
+%                    & Fear     & 0.09 & 0.10 & 0.11 \\
+%                    & Happy    & 0.49 & 0.08 & 0.05 \\
+%                    & Sad      & 0.27 & 0.09 & 0.17 \\
+%                    & Surprise & 0.09 & 0.04 & 0.14 \\
+%                    & Neutral  & 0.13 & 0.08 & 0.06 \\
+%\hline
+%\multirow{7}{*}{Aff}& Angry    & 0.15 & trained FER on FER & 0.13 trained RAF on RAF and trained Aff on Aff\\
+%			& Disgust  & 0.23 & trained FER on FER and trained RAF on RAF & 0.07 trained Aff on Aff\\
+%			& Fear     & 0.11 & trained Aff on Aff & 0.10 trained RAF on RAF\\
+%					& Happy    & 0.49 & trained Aff on FER & 0.08 trained FER on RAF\\
+%					& Sad      & 0.27 & trained Aff on FER & 0.17 trained Aff on Aff\\
+%					& Surprise & 0.14 & trained Aff on Aff & 0.09 trained FER on FER\\
+%					& Neutral  & 0.13 & trained Aff on FER & 0.08 trained FER on RAF\\
+\hline
+\hline
+%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+\end{tabular}
+\label{tab6}
+\end{center}
+\end{table}
+
+%\begin{table}[htbp]
+%	\caption{Highest F1-score Differences per Emotional State across all models and all data sets}
+%	\begin{center}
+%		\begin{tabular}{p{0.8cm}p{0.15cm}p{2.35cm}p{0.15cm}p{2.35cm}} %changed: c| added
+%			\hline
+%			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+%			\hline %changed:
+%			Emotion &  \multicolumn{2}{c}{Worst F1-Score difference} & \multicolumn{2}{c}{Second Worst F1-Score difference} \\
+%			\hline
+%			\hline
+%			Anger & 0.15 & trained FER on FER & 0.13 & trained RAF on RAF\\
+%			& & & & trained Aff on Aff\\
+%			Disgust  & 0.23 & trained FER on FER & 0.07 & trained Aff on Aff\\
+%			& & trained RAF on RAF & & \\
+%			Fear     & 0.11 & trained Aff on Aff & 0.10 & trained RAF on RAF\\
+%			Happiness    & 0.49 & trained Aff on FER & 0.08 & trained FER on RAF\\
+%			Sadness      & 0.27 & trained Aff on FER & 0.17 & trained Aff on Aff\\
+%			Surprise & 0.14 & trained Aff on Aff & 0.09 & trained FER on FER\\
+%			Neutral  & 0.13 & trained Aff on FER & 0.08 & trained FER on RAF\\
+%\hline
+%\hline
+%%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+%\end{tabular}
+%\label{highest_ranges_F1_score}
+%\end{center}
+%\end{table}
+In accordance to the ranking in Tables \ref{f1_scores_FER} -  \ref{f1_scores_Affect}, we present a ranking for every emotional state based on F1-scores in every data sets among all models. Table \ref{tab7} indicates best recognition accuracy, considering the average of F1-scores across all models. All data sets have the best F1-scores across the emotions while training and testing on the same data set, except disgust in trained AffectNet. Due to the split into training, validation and test data, class imbalances are present. A reason for disgust being more recognizable on RAF-DB for trained AffectNet models is the fact that this class has a very low share in every data set but is more present in RAF-DB. For trained FER2013 the recognition accuracy in RAF-DB is better than for AffectNet despite the fact RAF-DB has the smallest among of images. The emotions where RAF-DB has a lower rank have a small number in it. Focusing on RAF-DB trained models, the ranking for disgust, fear and surprise are the worst on FER2013. Even FER2013 has a higher percentage on the data set for these emotions, AffectNet has a higher recognition accuracy. Happiness and neutral have higher appearance on AffectNet while the accuracy level is lower. This is an indicator of label inconsistency on this emotions in AffectNet. Overall, this leads to the assumption that RAF-DB has the lowest data inconsistencies, while FER2013 and AffectNet have higher ones.
+
+\begin{table}[htbp]
+\caption{Recognition Accuracy F1-score Ranking}
+\begin{center}
+\begin{tabular}{p{1.0cm}|>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.4cm}|>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.4cm}|>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.4cm}} %changed: c| added
+\hline
+%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+\hline %changed:
+\multirow{3}{*}{Emotion} & \multicolumn{3}{c|}{FER2013} & \multicolumn{3}{c|}{RAF-DB} & \multicolumn{3}{c}{AffectNet}\\
+& \multicolumn{3}{c|}{with trained} & \multicolumn{3}{c|}{with trained} & \multicolumn{3}{c}{with trained} \\
+& FER & RAF & Aff & FER & RAF & Aff & FER & RAF & Aff \\
+\hline
+\hline
+Anger    & I. & II. & III. & III. & I. & II. & II. & III. & I. \\
+Disgust  & I. & III. & III. & III. & I. & I. & II. & II. & II.\\
+Fear     & I. & III. & III. & III. & I. & II. & II. & II. & I. \\
+Happiness & I. & II. & III. & II. & I. & II. & III. & III. & I. \\
+Sadness   & I. & II. & II. & II. & I. & III. & III. & III. & I. \\
+Surprise  & I. & III. & III. & II. & I. & II. & III. & II. & I. \\
+Neutral   & I. & II. & III. & II. & I. & II. & III. & III. & I. \\
+%\hline
+%\multirow{7}{*}{RAF} & Anger    & II. & I. & III. \\
+%                     & Disgust  & III.  & I.  & II. \\
+%                     & Fear     & III.   & I. & II. \\
+%                     & Happiness    & II. & I. & III. \\
+%                     & Sadness     & II. & I.  & III. \\
+%                     & Surprise & III. & I. & II. \\
+%                     & Neutral  & II. & I. & III. \\
+%\hline
+%\multirow{7}{*}{Aff} & Anger    & III. & II. & I. \\
+%                     & Disgust  & III.  & I.  & II. \\
+%                     & Fear     & III.   & II. & I. \\
+%                     & Happiness    & III. & II. & I. \\
+%                     & Sadness      & II. & III.  & I. \\
+%                     & Surprise & III.   & II. & I. \\
+%                     & Neutral  & III. & II. & I. \\
+\hline
+\hline
+%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+\end{tabular}
+\label{tab7}
+\end{center}
+\end{table}
+
+The low share of disgust might explain the high F1-score differences in Table \ref{tab6} and the generally low F1-scores in Tables \ref{f1_scores_FER} - \ref{f1_scores_Affect}. However, the emotional states anger and fear also have comparatively small shares, but significantly lower F1-score differences and relatively good F1-scores for all models. Emotional states with lower proportions can also achieve quite satisfactory recognition accuracy, for instance, surprise on FER2013 and RAF-DB. Beyond, happiness with its high appearance in all data sets has small accuracy levels on FER2013 for trained AffectNet models (see Table \ref{tab6}).
+
+The emotional classes are largely equally distributed across all data sets. In all three data sets, happiness is the emotional state with the highest share followed by neutral and sadness. For this reason, we believe that a comparison without further adjustment of the class weights in the training set is valid. However, we are also aware that our analysis has limitations and suggest future research considering class imbalances. This could help to understand the potential impact of class imbalances on our findings.
+%\begin{table}[htbp]
+%	\caption{Proportion of Emotional States in Every Data Set}
+%	\begin{center}
+%		\begin{tabular}{p{1.2cm}>{\raggedleft\arraybackslash}p{1.2cm}>{\raggedleft\arraybackslash}p{1.2cm}>{\raggedleft\arraybackslash}p{1.2cm}} %changed: c| added
+%			\hline
+%			%\multicolumn{5}{c}{\textbf{Table Column Head}} \\ %changed: 3 to 4
+%			\hline %changed:
+%			Emotion & FER2013 & RAF-DB & AffectNet\\
+%			\hline
+%			\hline
+%			Anger & 14\% & 6\% & 9\%  \\
+%			Disgust & 2\% & 6\% & 1\%  \\
+%			Fear & 14\% & 2\% & 2\% \\
+%			Happiness & 25\% & 39\% & 47\% \\
+%			Sadness & 17\% & 16\% & 9\% \\
+%			Surprise & 11\% & 11\% & 5\% \\
+%			Neutral & 17\% & 21\% & 26\% \\
+%			\hline
+%			\hline
+%			%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+%		\end{tabular}
+%		\label{tab8}
+%	\end{center}
+%\end{table}
+Overall, our analysis provides convincing evidence that recognition accuracy of individual emotional states differs. On the one hand, between individual emotional states, which is known from previous studies as well \cite{generosiDeepLearningbasedSystem2018}.
+On the other hand, recognition accuracy of individual emotions vary (strongly) between different data sets, here between three facial expression databases, while the image features (e.g. size, color) and training parameters (e.g. epochs) are kept constant. The used model architectures slightly vary in the accuracy, therefore the results lead to the same conclusions. AffectNet data set indicates higher (F1-score) differences. The least data inconsistencies can be assumed on RAF-DB. Our findings imply data inconsistencies and/or label ambiguity. Possible reasons for these variations in emotional data can be multifactorial. Three potential factors follow.
+
+First, the number of total instances and the proportion of emotional classes tend to have an influence on the recognition accuracy of emotional states. This does not apply to all emotional states. The AffectNet data set with most instances, reaches the lowest recognition accuracy for three emotions.
+
+Second, reducing the image size and color range of RAF-DB and AffectNet to fit the requires of FER2013 could potentially lead to losses of information content. However, interestingly initial experiments without pixel reduction showed the opposite. The AffectNet data set with the highest image resolution and detail information, had generally the lowest recognition accuracy scores.
+
+Third, our findings show that certain emotions, i.e., disgust and fear, have lower recognition accuracy. This is in line with previous publications \cite{khaireddinFacialEmotionRecognition2021,knyazevConvolutionalNeuralNetworks2017}. It is worth mentioning that emotions can have different intensities. Plus, differences between certain emotions are not very obvious. Some emotions are very similar and their expressions can be closely related to other emotions. Recently, research has also questioned whether it is valid to assume that facial expressions only contain single emotional states \cite{ekundayoFacialExpressionRecognition2021}. As consequence, data annotations can be biased and/or incorrect. This can be possible for images carrying higher information content, which leads to higher ambiguity, variability and variance. Therefore, manual image annotation is more difficult and subject to a higher error rate.
+
+
+
+\section{Conclusion}
+In conclusion, this paper presented an approach to detect label inconsistencies in commonly used facial expression datasets by a comparative analysis of a transfer test of three different ML models. Therefore, these data sets have been processed using the same resolution to classify the contained facial images with respect to the expressed emotions. To eliminate possible influences of model architectures, we considered three different types of models. Initial experiments indicate that the complexity of the used ML architectures does not have a significant impact on the overall performance of the emotion recognition. The portability among the data sets, on the other hand, deserved a closer look. By transfer testing, the presented results demonstrate that recognition accuracy is influenced by the size of the data set and the support for each emotion in it. Furthermore, it seems to be (strongly) influenced by the underlying data (label) quality.
+
+All in all, this leads to several future research directions. First, more empirical analysis is required, comparing more data sets and complex machine learning models. Class imbalances should also be taken into account. Second, investigations are necessary to understand why certain emotions have low recognition accuracy and possible solutions for this challenge. Third, based on our results, it is necessary to investigate a potential relationship between annotation inconsistencies and portability of machine learning architectures. Fourth, research is required to minimize and/or distinguish data annotation inconsistencies and label ambiguity as well as the implications which entail with each of them.
+
+AI-based emotion recognition is in general a promising technique for applications. Nonetheless, our results show that AI needs to be applied with great care. On the one hand we should always critically reflect its outcomes, and on the other hand its data input (quality).
+
+
+%\begin{table}[htbp]
+%\caption{Table Type Styles}
+%\begin{center}
+%\begin{tabular}{c|c|c|c|c|} %changed: c| added
+%\hline
+%\textbf{Table}&\multicolumn{4}{|c|}{\textbf{Table Column Head}} \\%changed: 3 to 4
+%\cline{2-5}%changed: 2-5 instead of 2-4
+%\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{temp}}\\ %changed: one subunit added
+%\hline
+%copy& More table copy$^{\mathrm{a}}$& & &  \\
+%\hline %changed:
+%A & B & C & D & E \\ %added
+%\hline
+%\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+%\end{tabular}
+%\label{tab1}
+%\end{center}
+%\end{table}
+
+%\section*{ACKNOWLEDGMENT}
+%Avoid the stilted expression ``one of us (R. B. G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''.
+
+\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{20220128_my-bibfile}
+
+\end{document}

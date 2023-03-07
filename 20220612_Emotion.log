@@ -1,0 +1,1477 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.31)  20 JUN 2022 16:01
+entering extended mode
+**./20220612_Emotion.tex
+(20220612_Emotion.tex
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-10-18>
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/ieeetran\IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen138
+\@IEEEtrantmpdimenB=\dimen139
+\@IEEEtrantmpdimenC=\dimen140
+\@IEEEtrantmpcountA=\count182
+\@IEEEtrantmpcountB=\count183
+\@IEEEtrantmpcountC=\count184
+\@IEEEtrantmptoksA=\toks16
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
+03.
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 210mm x 297mm (a4) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen141
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen142
+\CLASSINFOnormalsizeunitybaselineskip=\dimen143
+\IEEEnormaljot=\dimen144
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen145
+\IEEEquantizedlengthdiff=\dimen146
+\IEEEquantizedtextheightdiff=\dimen147
+\IEEEilabelindentA=\dimen148
+\IEEEilabelindentB=\dimen149
+\IEEEilabelindent=\dimen150
+\IEEEelabelindent=\dimen151
+\IEEEdlabelindent=\dimen152
+\IEEElabelindent=\dimen153
+\IEEEiednormlabelsep=\dimen154
+\IEEEiedmathlabelsep=\dimen155
+\IEEEiedtopsep=\skip47
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@IEEEsubequation=\count189
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\c@figure=\count190
+\c@table=\count191
+\@IEEEeqnnumcols=\count192
+\@IEEEeqncolcnt=\count193
+\@IEEEsubeqnnumrollback=\count194
+\@IEEEquantizeheightA=\dimen156
+\@IEEEquantizeheightB=\dimen157
+\@IEEEquantizeheightC=\dimen158
+\@IEEEquantizeprevdepth=\dimen159
+\@IEEEquantizemultiple=\count195
+\@IEEEquantizeboxA=\box50
+\@IEEEtmpitemindent=\dimen160
+\IEEEPARstartletwidth=\dimen161
+\c@IEEEbiography=\count196
+\@IEEEtranrubishbin=\box51
+)
+** ATTENTION: Overriding command lockouts (line 2).
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/04/20 v2.17j AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen162
+))
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen163
+)
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count197
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count198
+\leftroot@=\count199
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count266
+\DOTSCASE@=\count267
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+\big@size=\dimen164
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count268
+\c@MaxMatrixCols=\count269
+\dotsspace@=\muskip16
+\c@parentequation=\count270
+\dspbrk@lvl=\count271
+\tag@help=\toks18
+\row@=\count272
+\column@=\count273
+\maxfields@=\count274
+\andhelp@=\toks19
+\eqnshift@=\dimen165
+\alignsep@=\dimen166
+\tagshift@=\dimen167
+\tagwidth@=\dimen168
+\totwidth@=\dimen169
+\lineht@=\dimen170
+\@envbody=\toks20
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+)
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithmic
+.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+ (C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+\c@ALC@unique=\count275
+\c@ALC@line=\count276
+\c@ALC@rem=\count277
+\c@ALC@depth=\count278
+\ALC@tlm=\skip53
+\algorithmicindent=\skip54
+)
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+f
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
+) (C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+ftex.def
+File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count279
+\l__pdf_internal_box=\box54
+) (20220612_Emotion.aux)
+\openout1 = `20220612_Emotion.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+
+-- Lines per column: 56 (exact).
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count280
+\scratchdimen=\dimen173
+\scratchbox=\box55
+\nofMPsegments=\count281
+\nofMParguments=\count282
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count283
+\MPscratchDim=\dimen174
+\MPnumerator=\count284
+\makeMPintoPDFobject=\count285
+\everyMPtoPDFconversion=\toks24
+)
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+)) [1{C:/Users/gebele/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
+
+
+]
+Underfull \hbox (badness 1400) in paragraph at lines 81--82
+\OT1/ptm/m/n/10 Sec-tion III[] presents the re-search method-ol-ogy and data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 93.
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
+
+
+(C:\Users\gebele\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+[2]
+Underfull \hbox (badness 2529) in paragraph at lines 113--114
+[]\OT1/ptm/m/n/10 Previous re-search in FER has led to a num-ber of
+ []
+
+
+Underfull \hbox (badness 5161) in paragraph at lines 113--114
+\OT1/ptm/m/n/10 un-con-trolled), and num-ber of fa-cial ex-pres-sions [19].
+ []
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 113--114
+\OT1/ptm/m/n/10 (RAF-DB) [38]. In most of these databases six ba-sic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+
+Overfull \hbox (3.05722pt too wide) in paragraph at lines 258--259
+[]\OT1/ptm/m/n/8 Count| 
+ []
+
+20220612_Emotion.tex:261: Missing $ inserted.
+<inserted text> 
+                $
+l.261 Angry-FER & 0.49 (\pm
+                            0.02) & 0.51 (\pm 0.01) & 0.50 (\pm 0.01) &  991 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:261: Missing $ inserted.
+<inserted text> 
+                $
+l.261 Angry-FER & 0.49 (\pm 0.02) &
+                                    0.51 (\pm 0.01) & 0.50 (\pm 0.01) &  991 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:261: Missing $ inserted.
+<inserted text> 
+                $
+l.261 Angry-FER & 0.49 (\pm 0.02) & 0.51 (\pm
+                                              0.01) & 0.50 (\pm 0.01) &  991 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:261: Missing $ inserted.
+<inserted text> 
+                $
+l.261 ...FER & 0.49 (\pm 0.02) & 0.51 (\pm 0.01) &
+                                                   0.50 (\pm 0.01) &  991 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:261: Missing $ inserted.
+<inserted text> 
+                $
+l.261 ... (\pm 0.02) & 0.51 (\pm 0.01) & 0.50 (\pm
+                                                   0.01) &  991 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:261: Missing $ inserted.
+<inserted text> 
+                $
+l.261 ...02) & 0.51 (\pm 0.01) & 0.50 (\pm 0.01) &
+                                                    991 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:262: Missing $ inserted.
+<inserted text> 
+                $
+l.262 Angry-RAF & 0.55 (\pm
+                            0.02) & 0.52 (\pm 0.02) & 0.53 (\pm 0.01) & 173 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:262: Missing $ inserted.
+<inserted text> 
+                $
+l.262 Angry-RAF & 0.55 (\pm 0.02) &
+                                    0.52 (\pm 0.02) & 0.53 (\pm 0.01) & 173 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:262: Missing $ inserted.
+<inserted text> 
+                $
+l.262 Angry-RAF & 0.55 (\pm 0.02) & 0.52 (\pm
+                                              0.02) & 0.53 (\pm 0.01) & 173 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:262: Missing $ inserted.
+<inserted text> 
+                $
+l.262 ...RAF & 0.55 (\pm 0.02) & 0.52 (\pm 0.02) &
+                                                   0.53 (\pm 0.01) & 173 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:262: Missing $ inserted.
+<inserted text> 
+                $
+l.262 ... (\pm 0.02) & 0.52 (\pm 0.02) & 0.53 (\pm
+                                                   0.01) & 173 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:262: Missing $ inserted.
+<inserted text> 
+                $
+l.262 ...02) & 0.52 (\pm 0.02) & 0.53 (\pm 0.01) &
+                                                   173 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:263: Missing $ inserted.
+<inserted text> 
+                $
+l.263 Angry-Aff & 0.59 (\pm
+                            0.03) & 0.50 (\pm 0.04) & 0.54 (\pm 0.01) & 5,07...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:263: Missing $ inserted.
+<inserted text> 
+                $
+l.263 Angry-Aff & 0.59 (\pm 0.03) &
+                                    0.50 (\pm 0.04) & 0.54 (\pm 0.01) & 5,07...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:263: Missing $ inserted.
+<inserted text> 
+                $
+l.263 Angry-Aff & 0.59 (\pm 0.03) & 0.50 (\pm
+                                              0.04) & 0.54 (\pm 0.01) & 5,07...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:263: Missing $ inserted.
+<inserted text> 
+                $
+l.263 ...Aff & 0.59 (\pm 0.03) & 0.50 (\pm 0.04) &
+                                                   0.54 (\pm 0.01) & 5,076 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:263: Missing $ inserted.
+<inserted text> 
+                $
+l.263 ... (\pm 0.03) & 0.50 (\pm 0.04) & 0.54 (\pm
+                                                   0.01) & 5,076 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:263: Missing $ inserted.
+<inserted text> 
+                $
+l.263 ...03) & 0.50 (\pm 0.04) & 0.54 (\pm 0.01) &
+                                                   5,076 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 263--264
+[]\OT1/ptm/m/n/8 5,076| 
+ []
+
+20220612_Emotion.tex:265: Missing $ inserted.
+<inserted text> 
+                $
+l.265 Disgust-FER & 0.35 (\pm
+                              0.44) & 0.04 (\pm 0.08) & 0.07 (\pm 0.13) & 10...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:265: Missing $ inserted.
+<inserted text> 
+                $
+l.265 Disgust-FER & 0.35 (\pm 0.44) &
+                                      0.04 (\pm 0.08) & 0.07 (\pm 0.13) & 10...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:265: Missing $ inserted.
+<inserted text> 
+                $
+l.265 Disgust-FER & 0.35 (\pm 0.44) & 0.04 (\pm
+                                                0.08) & 0.07 (\pm 0.13) & 10...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:265: Missing $ inserted.
+<inserted text> 
+                $
+l.265 ...FER & 0.35 (\pm 0.44) & 0.04 (\pm 0.08) &
+                                                   0.07 (\pm 0.13) & 109 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:265: Missing $ inserted.
+<inserted text> 
+                $
+l.265 ... (\pm 0.44) & 0.04 (\pm 0.08) & 0.07 (\pm
+                                                   0.13) & 109 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:265: Missing $ inserted.
+<inserted text> 
+                $
+l.265 ...44) & 0.04 (\pm 0.08) & 0.07 (\pm 0.13) &
+                                                   109 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:266: Missing $ inserted.
+<inserted text> 
+                $
+l.266 Disgust-RAF & 0.51 (\pm
+                              0.09) & 0.19 (\pm 0.09) & 0.26 (\pm 0.10) & 17...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:266: Missing $ inserted.
+<inserted text> 
+                $
+l.266 Disgust-RAF & 0.51 (\pm 0.09) &
+                                      0.19 (\pm 0.09) & 0.26 (\pm 0.10) & 17...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:266: Missing $ inserted.
+<inserted text> 
+                $
+l.266 Disgust-RAF & 0.51 (\pm 0.09) & 0.19 (\pm
+                                                0.09) & 0.26 (\pm 0.10) & 17...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:266: Missing $ inserted.
+<inserted text> 
+                $
+l.266 ...RAF & 0.51 (\pm 0.09) & 0.19 (\pm 0.09) &
+                                                   0.26 (\pm 0.10) & 175 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:266: Missing $ inserted.
+<inserted text> 
+                $
+l.266 ... (\pm 0.09) & 0.19 (\pm 0.09) & 0.26 (\pm
+                                                   0.10) & 175 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:266: Missing $ inserted.
+<inserted text> 
+                $
+l.266 ...09) & 0.19 (\pm 0.09) & 0.26 (\pm 0.10) &
+                                                   175 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:267: Missing $ inserted.
+<inserted text> 
+                $
+l.267 Disgust-Aff & 0.00 (\pm
+                              0.00) & 0.00 (\pm 0.00) & 0.00 (\pm 0.00) & 86...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:267: Missing $ inserted.
+<inserted text> 
+                $
+l.267 Disgust-Aff & 0.00 (\pm 0.00) &
+                                      0.00 (\pm 0.00) & 0.00 (\pm 0.00) & 86...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:267: Missing $ inserted.
+<inserted text> 
+                $
+l.267 Disgust-Aff & 0.00 (\pm 0.00) & 0.00 (\pm
+                                                0.00) & 0.00 (\pm 0.00) & 86...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:267: Missing $ inserted.
+<inserted text> 
+                $
+l.267 ...Aff & 0.00 (\pm 0.00) & 0.00 (\pm 0.00) &
+                                                   0.00 (\pm 0.00) & 861 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:267: Missing $ inserted.
+<inserted text> 
+                $
+l.267 ... (\pm 0.00) & 0.00 (\pm 0.00) & 0.00 (\pm
+                                                   0.00) & 861 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:267: Missing $ inserted.
+<inserted text> 
+                $
+l.267 ...00) & 0.00 (\pm 0.00) & 0.00 (\pm 0.00) &
+                                                   861 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:269: Missing $ inserted.
+<inserted text> 
+                $
+l.269 Fear-FER & 0.42 (\pm
+                           0.02) & 0.33 (\pm 0.05) & 0.37 (\pm 0.04) & 1,024 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:269: Missing $ inserted.
+<inserted text> 
+                $
+l.269 Fear-FER & 0.42 (\pm 0.02) &
+                                   0.33 (\pm 0.05) & 0.37 (\pm 0.04) & 1,024 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:269: Missing $ inserted.
+<inserted text> 
+                $
+l.269 Fear-FER & 0.42 (\pm 0.02) & 0.33 (\pm
+                                             0.05) & 0.37 (\pm 0.04) & 1,024 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:269: Missing $ inserted.
+<inserted text> 
+                $
+l.269 ...FER & 0.42 (\pm 0.02) & 0.33 (\pm 0.05) &
+                                                   0.37 (\pm 0.04) & 1,024 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:269: Missing $ inserted.
+<inserted text> 
+                $
+l.269 ... (\pm 0.02) & 0.33 (\pm 0.05) & 0.37 (\pm
+                                                   0.04) & 1,024 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:269: Missing $ inserted.
+<inserted text> 
+                $
+l.269 ...02) & 0.33 (\pm 0.05) & 0.37 (\pm 0.04) &
+                                                   1,024 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 269--270
+[]\OT1/ptm/m/n/8 1,024| 
+ []
+
+20220612_Emotion.tex:270: Missing $ inserted.
+<inserted text> 
+                $
+l.270 Fear-RAF & 0.68 (\pm
+                           0.17) & 0.23 (\pm 0.11) & 0.31 (\pm 0.14) & 71 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:270: Missing $ inserted.
+<inserted text> 
+                $
+l.270 Fear-RAF & 0.68 (\pm 0.17) &
+                                   0.23 (\pm 0.11) & 0.31 (\pm 0.14) & 71 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:270: Missing $ inserted.
+<inserted text> 
+                $
+l.270 Fear-RAF & 0.68 (\pm 0.17) & 0.23 (\pm
+                                             0.11) & 0.31 (\pm 0.14) & 71 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:270: Missing $ inserted.
+<inserted text> 
+                $
+l.270 ...RAF & 0.68 (\pm 0.17) & 0.23 (\pm 0.11) &
+                                                   0.31 (\pm 0.14) & 71 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:270: Missing $ inserted.
+<inserted text> 
+                $
+l.270 ... (\pm 0.17) & 0.23 (\pm 0.11) & 0.31 (\pm
+                                                   0.14) & 71 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:270: Missing $ inserted.
+<inserted text> 
+                $
+l.270 ...17) & 0.23 (\pm 0.11) & 0.31 (\pm 0.14) &
+                                                   71 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:271: Missing $ inserted.
+<inserted text> 
+                $
+l.271 Fear-Aff & 0.50 (\pm
+                           0.06) & 0.20 (\pm 0.03) & 0.28 (\pm 0.02) & 1,376 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:271: Missing $ inserted.
+<inserted text> 
+                $
+l.271 Fear-Aff & 0.50 (\pm 0.06) &
+                                   0.20 (\pm 0.03) & 0.28 (\pm 0.02) & 1,376 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:271: Missing $ inserted.
+<inserted text> 
+                $
+l.271 Fear-Aff & 0.50 (\pm 0.06) & 0.20 (\pm
+                                             0.03) & 0.28 (\pm 0.02) & 1,376 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:271: Missing $ inserted.
+<inserted text> 
+                $
+l.271 ...Aff & 0.50 (\pm 0.06) & 0.20 (\pm 0.03) &
+                                                   0.28 (\pm 0.02) & 1,376 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:271: Missing $ inserted.
+<inserted text> 
+                $
+l.271 ... (\pm 0.06) & 0.20 (\pm 0.03) & 0.28 (\pm
+                                                   0.02) & 1,376 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:271: Missing $ inserted.
+<inserted text> 
+                $
+l.271 ...06) & 0.20 (\pm 0.03) & 0.28 (\pm 0.02) &
+                                                   1,376 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 271--272
+[]\OT1/ptm/m/n/8 1,376| 
+ []
+
+20220612_Emotion.tex:273: Missing $ inserted.
+<inserted text> 
+                $
+l.273 Happy-FER & 0.78 (\pm
+                            0.01) & 0.79 (\pm 0.01) & 0.79 (\pm 0.01) & 1,79...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:273: Missing $ inserted.
+<inserted text> 
+                $
+l.273 Happy-FER & 0.78 (\pm 0.01) &
+                                    0.79 (\pm 0.01) & 0.79 (\pm 0.01) & 1,79...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:273: Missing $ inserted.
+<inserted text> 
+                $
+l.273 Happy-FER & 0.78 (\pm 0.01) & 0.79 (\pm
+                                              0.01) & 0.79 (\pm 0.01) & 1,79...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:273: Missing $ inserted.
+<inserted text> 
+                $
+l.273 ...FER & 0.78 (\pm 0.01) & 0.79 (\pm 0.01) &
+                                                   0.79 (\pm 0.01) & 1,798 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:273: Missing $ inserted.
+<inserted text> 
+                $
+l.273 ... (\pm 0.01) & 0.79 (\pm 0.01) & 0.79 (\pm
+                                                   0.01) & 1,798 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:273: Missing $ inserted.
+<inserted text> 
+                $
+l.273 ...01) & 0.79 (\pm 0.01) & 0.79 (\pm 0.01) &
+                                                   1,798 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 273--274
+[]\OT1/ptm/m/n/8 1,798| 
+ []
+
+20220612_Emotion.tex:274: Missing $ inserted.
+<inserted text> 
+                $
+l.274 Happy-RAF & 0.85 (\pm
+                            0.02) & 0.89 (\pm 0.01) & 0.87 (\pm 0.01) & 1,19...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:274: Missing $ inserted.
+<inserted text> 
+                $
+l.274 Happy-RAF & 0.85 (\pm 0.02) &
+                                    0.89 (\pm 0.01) & 0.87 (\pm 0.01) & 1,19...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:274: Missing $ inserted.
+<inserted text> 
+                $
+l.274 Happy-RAF & 0.85 (\pm 0.02) & 0.89 (\pm
+                                              0.01) & 0.87 (\pm 0.01) & 1,19...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:274: Missing $ inserted.
+<inserted text> 
+                $
+l.274 ...RAF & 0.85 (\pm 0.02) & 0.89 (\pm 0.01) &
+                                                   0.87 (\pm 0.01) & 1,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:274: Missing $ inserted.
+<inserted text> 
+                $
+l.274 ... (\pm 0.02) & 0.89 (\pm 0.01) & 0.87 (\pm
+                                                   0.01) & 1,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:274: Missing $ inserted.
+<inserted text> 
+                $
+l.274 ...02) & 0.89 (\pm 0.01) & 0.87 (\pm 0.01) &
+                                                   1,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 274--275
+[]\OT1/ptm/m/n/8 1,192| 
+ []
+
+20220612_Emotion.tex:275: Missing $ inserted.
+<inserted text> 
+                $
+l.275 Happy-Aff & 0.88 (\pm
+                            0.01) & 0.91 (\pm 0.01) & 0.89 (\pm 0.00) & 26,9...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:275: Missing $ inserted.
+<inserted text> 
+                $
+l.275 Happy-Aff & 0.88 (\pm 0.01) &
+                                    0.91 (\pm 0.01) & 0.89 (\pm 0.00) & 26,9...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:275: Missing $ inserted.
+<inserted text> 
+                $
+l.275 Happy-Aff & 0.88 (\pm 0.01) & 0.91 (\pm
+                                              0.01) & 0.89 (\pm 0.00) & 26,9...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:275: Missing $ inserted.
+<inserted text> 
+                $
+l.275 ...Aff & 0.88 (\pm 0.01) & 0.91 (\pm 0.01) &
+                                                   0.89 (\pm 0.00) & 26,983 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:275: Missing $ inserted.
+<inserted text> 
+                $
+l.275 ... (\pm 0.01) & 0.91 (\pm 0.01) & 0.89 (\pm
+                                                   0.00) & 26,983 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:275: Missing $ inserted.
+<inserted text> 
+                $
+l.275 ...01) & 0.91 (\pm 0.01) & 0.89 (\pm 0.00) &
+                                                   26,983 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (5.49736pt too wide) in paragraph at lines 275--276
+[]\OT1/ptm/m/n/8 26,983| 
+ []
+
+20220612_Emotion.tex:277: Missing $ inserted.
+<inserted text> 
+                $
+l.277 Sad-FER & 0.45 (\pm
+                          0.02) & 0.50 (\pm 0.03) & 0.47 (\pm 0.02) & 1,216 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:277: Missing $ inserted.
+<inserted text> 
+                $
+l.277 Sad-FER & 0.45 (\pm 0.02) &
+                                  0.50 (\pm 0.03) & 0.47 (\pm 0.02) & 1,216 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:277: Missing $ inserted.
+<inserted text> 
+                $
+l.277 Sad-FER & 0.45 (\pm 0.02) & 0.50 (\pm
+                                            0.03) & 0.47 (\pm 0.02) & 1,216 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:277: Missing $ inserted.
+<inserted text> 
+                $
+l.277 ...FER & 0.45 (\pm 0.02) & 0.50 (\pm 0.03) &
+                                                   0.47 (\pm 0.02) & 1,216 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:277: Missing $ inserted.
+<inserted text> 
+                $
+l.277 ... (\pm 0.02) & 0.50 (\pm 0.03) & 0.47 (\pm
+                                                   0.02) & 1,216 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:277: Missing $ inserted.
+<inserted text> 
+                $
+l.277 ...02) & 0.50 (\pm 0.03) & 0.47 (\pm 0.02) &
+                                                   1,216 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 277--278
+[]\OT1/ptm/m/n/8 1,216| 
+ []
+
+20220612_Emotion.tex:278: Missing $ inserted.
+<inserted text> 
+                $
+l.278 Sad-RAF & 0.58 (\pm
+                          0.02) & 0.54 (\pm 0.06) & 0.56 (\pm 0.04) & 492 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:278: Missing $ inserted.
+<inserted text> 
+                $
+l.278 Sad-RAF & 0.58 (\pm 0.02) &
+                                  0.54 (\pm 0.06) & 0.56 (\pm 0.04) & 492 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:278: Missing $ inserted.
+<inserted text> 
+                $
+l.278 Sad-RAF & 0.58 (\pm 0.02) & 0.54 (\pm
+                                            0.06) & 0.56 (\pm 0.04) & 492 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:278: Missing $ inserted.
+<inserted text> 
+                $
+l.278 ...RAF & 0.58 (\pm 0.02) & 0.54 (\pm 0.06) &
+                                                   0.56 (\pm 0.04) & 492 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:278: Missing $ inserted.
+<inserted text> 
+                $
+l.278 ... (\pm 0.02) & 0.54 (\pm 0.06) & 0.56 (\pm
+                                                   0.04) & 492 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:278: Missing $ inserted.
+<inserted text> 
+                $
+l.278 ...02) & 0.54 (\pm 0.06) & 0.56 (\pm 0.04) &
+                                                   492 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:279: Missing $ inserted.
+<inserted text> 
+                $
+l.279 Sad-Aff & 0.57 (\pm
+                          0.02) & 0.44 (\pm 0.03) & 0.50 (\pm 0.01) & 5,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:279: Missing $ inserted.
+<inserted text> 
+                $
+l.279 Sad-Aff & 0.57 (\pm 0.02) &
+                                  0.44 (\pm 0.03) & 0.50 (\pm 0.01) & 5,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:279: Missing $ inserted.
+<inserted text> 
+                $
+l.279 Sad-Aff & 0.57 (\pm 0.02) & 0.44 (\pm
+                                            0.03) & 0.50 (\pm 0.01) & 5,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:279: Missing $ inserted.
+<inserted text> 
+                $
+l.279 ...Aff & 0.57 (\pm 0.02) & 0.44 (\pm 0.03) &
+                                                   0.50 (\pm 0.01) & 5,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:279: Missing $ inserted.
+<inserted text> 
+                $
+l.279 ... (\pm 0.02) & 0.44 (\pm 0.03) & 0.50 (\pm
+                                                   0.01) & 5,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:279: Missing $ inserted.
+<inserted text> 
+                $
+l.279 ...02) & 0.44 (\pm 0.03) & 0.50 (\pm 0.01) &
+                                                   5,192 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 279--280
+[]\OT1/ptm/m/n/8 5,192| 
+ []
+
+20220612_Emotion.tex:281: Missing $ inserted.
+<inserted text> 
+                $
+l.281 Surprise-FER & 0.71 (\pm
+                               0.01) & 0.70 (\pm 0.01) & 0.70 (\pm 0.00) & 8...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:281: Missing $ inserted.
+<inserted text> 
+                $
+l.281 Surprise-FER & 0.71 (\pm 0.01) &
+                                       0.70 (\pm 0.01) & 0.70 (\pm 0.00) & 8...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:281: Missing $ inserted.
+<inserted text> 
+                $
+l.281 Surprise-FER & 0.71 (\pm 0.01) & 0.70 (\pm
+                                                 0.01) & 0.70 (\pm 0.00) & 8...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:281: Missing $ inserted.
+<inserted text> 
+                $
+l.281 ...FER & 0.71 (\pm 0.01) & 0.70 (\pm 0.01) &
+                                                   0.70 (\pm 0.00) & 800 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:281: Missing $ inserted.
+<inserted text> 
+                $
+l.281 ... (\pm 0.01) & 0.70 (\pm 0.01) & 0.70 (\pm
+                                                   0.00) & 800 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:281: Missing $ inserted.
+<inserted text> 
+                $
+l.281 ...01) & 0.70 (\pm 0.01) & 0.70 (\pm 0.00) &
+                                                   800 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:282: Missing $ inserted.
+<inserted text> 
+                $
+l.282 Surprise-RAF & 0.67 (\pm
+                               0.01) & 0.66 (\pm 0.03) & 0.67 (\pm 0.02) & 3...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:282: Missing $ inserted.
+<inserted text> 
+                $
+l.282 Surprise-RAF & 0.67 (\pm 0.01) &
+                                       0.66 (\pm 0.03) & 0.67 (\pm 0.02) & 3...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:282: Missing $ inserted.
+<inserted text> 
+                $
+l.282 Surprise-RAF & 0.67 (\pm 0.01) & 0.66 (\pm
+                                                 0.03) & 0.67 (\pm 0.02) & 3...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:282: Missing $ inserted.
+<inserted text> 
+                $
+l.282 ...RAF & 0.67 (\pm 0.01) & 0.66 (\pm 0.03) &
+                                                   0.67 (\pm 0.02) & 324 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:282: Missing $ inserted.
+<inserted text> 
+                $
+l.282 ... (\pm 0.01) & 0.66 (\pm 0.03) & 0.67 (\pm
+                                                   0.02) & 324 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:282: Missing $ inserted.
+<inserted text> 
+                $
+l.282 ...01) & 0.66 (\pm 0.03) & 0.67 (\pm 0.02) &
+                                                   324 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:283: Missing $ inserted.
+<inserted text> 
+                $
+l.283 Surprise-Aff & 0.50 (\pm
+                               0.04) & 0.36 (\pm 0.03) & 0.42 (\pm 0.01) & 2...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:283: Missing $ inserted.
+<inserted text> 
+                $
+l.283 Surprise-Aff & 0.50 (\pm 0.04) &
+                                       0.36 (\pm 0.03) & 0.42 (\pm 0.01) & 2...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:283: Missing $ inserted.
+<inserted text> 
+                $
+l.283 Surprise-Aff & 0.50 (\pm 0.04) & 0.36 (\pm
+                                                 0.03) & 0.42 (\pm 0.01) & 2...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:283: Missing $ inserted.
+<inserted text> 
+                $
+l.283 ...Aff & 0.50 (\pm 0.04) & 0.36 (\pm 0.03) &
+                                                   0.42 (\pm 0.01) & 2,918 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:283: Missing $ inserted.
+<inserted text> 
+                $
+l.283 ... (\pm 0.04) & 0.36 (\pm 0.03) & 0.42 (\pm
+                                                   0.01) & 2,918 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:283: Missing $ inserted.
+<inserted text> 
+                $
+l.283 ...04) & 0.36 (\pm 0.03) & 0.42 (\pm 0.01) &
+                                                   2,918 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 283--284
+[]\OT1/ptm/m/n/8 2,918| 
+ []
+
+20220612_Emotion.tex:285: Missing $ inserted.
+<inserted text> 
+                $
+l.285 Neutral-FER & 0.51 (\pm
+                              0.02) & 0.56 (\pm 0.02) & 0.53 (\pm 0.01) & 1,...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:285: Missing $ inserted.
+<inserted text> 
+                $
+l.285 Neutral-FER & 0.51 (\pm 0.02) &
+                                      0.56 (\pm 0.02) & 0.53 (\pm 0.01) & 1,...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:285: Missing $ inserted.
+<inserted text> 
+                $
+l.285 Neutral-FER & 0.51 (\pm 0.02) & 0.56 (\pm
+                                                0.02) & 0.53 (\pm 0.01) & 1,...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:285: Missing $ inserted.
+<inserted text> 
+                $
+l.285 ...FER & 0.51 (\pm 0.02) & 0.56 (\pm 0.02) &
+                                                   0.53 (\pm 0.01) & 1,240 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:285: Missing $ inserted.
+<inserted text> 
+                $
+l.285 ... (\pm 0.02) & 0.56 (\pm 0.02) & 0.53 (\pm
+                                                   0.01) & 1,240 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:285: Missing $ inserted.
+<inserted text> 
+                $
+l.285 ...02) & 0.56 (\pm 0.02) & 0.53 (\pm 0.01) &
+                                                   1,240 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.49736pt too wide) in paragraph at lines 285--286
+[]\OT1/ptm/m/n/8 1,240| 
+ []
+
+20220612_Emotion.tex:286: Missing $ inserted.
+<inserted text> 
+                $
+l.286 Neutral-RAF & 0.61 (\pm
+                              0.03) & 0.74 (\pm 0.03) & 0.67 (\pm 0.01) & 64...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:286: Missing $ inserted.
+<inserted text> 
+                $
+l.286 Neutral-RAF & 0.61 (\pm 0.03) &
+                                      0.74 (\pm 0.03) & 0.67 (\pm 0.01) & 64...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:286: Missing $ inserted.
+<inserted text> 
+                $
+l.286 Neutral-RAF & 0.61 (\pm 0.03) & 0.74 (\pm
+                                                0.03) & 0.67 (\pm 0.01) & 64...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:286: Missing $ inserted.
+<inserted text> 
+                $
+l.286 ...RAF & 0.61 (\pm 0.03) & 0.74 (\pm 0.03) &
+                                                   0.67 (\pm 0.01) & 641 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:286: Missing $ inserted.
+<inserted text> 
+                $
+l.286 ... (\pm 0.03) & 0.74 (\pm 0.03) & 0.67 (\pm
+                                                   0.01) & 641 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:286: Missing $ inserted.
+<inserted text> 
+                $
+l.286 ...03) & 0.74 (\pm 0.03) & 0.67 (\pm 0.01) &
+                                                   641 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:287: Missing $ inserted.
+<inserted text> 
+                $
+l.287 Neutral-Aff & 0.62 (\pm
+                              0.02) & 0.75 (\pm 0.03) & 0.68 (\pm 0.00) & 15...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:287: Missing $ inserted.
+<inserted text> 
+                $
+l.287 Neutral-Aff & 0.62 (\pm 0.02) &
+                                      0.75 (\pm 0.03) & 0.68 (\pm 0.00) & 15...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:287: Missing $ inserted.
+<inserted text> 
+                $
+l.287 Neutral-Aff & 0.62 (\pm 0.02) & 0.75 (\pm
+                                                0.03) & 0.68 (\pm 0.00) & 15...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:287: Missing $ inserted.
+<inserted text> 
+                $
+l.287 ...Aff & 0.62 (\pm 0.02) & 0.75 (\pm 0.03) &
+                                                   0.68 (\pm 0.00) & 15,075 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:287: Missing $ inserted.
+<inserted text> 
+                $
+l.287 ... (\pm 0.02) & 0.75 (\pm 0.03) & 0.68 (\pm
+                                                   0.00) & 15,075 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+20220612_Emotion.tex:287: Missing $ inserted.
+<inserted text> 
+                $
+l.287 ...02) & 0.75 (\pm 0.03) & 0.68 (\pm 0.00) &
+                                                   15,075 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (5.49736pt too wide) in paragraph at lines 287--288
+[]\OT1/ptm/m/n/8 15,075| 
+ []
+
+[4] [5]
+Underfull \hbox (badness 2744) in paragraph at lines 458--459
+\OT1/ptm/m/n/10 am-bi-gu-ity, vari-abil-ity and vari-ance in fa-cial ex-pres-si
+on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
+
+ []
+
+[6] (20220612_Emotion.bbl
+Underfull \hbox (badness 1546) in paragraph at lines 68--73
+[]\OT1/ptm/m/n/8 J. Mar[]n-Morales, J. L. Higuera-Trujillo, A. Greco, J. Guix-
+eres,
+ []
+
+[7])
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[8
+
+] (20220612_Emotion.aux) ) 
+Here is how much of TeX's memory you used:
+ 4029 strings out of 478907
+ 61321 string characters out of 2851417
+ 407657 words of memory out of 3000000
+ 21875 multiletter control sequences out of 15000+600000
+ 440456 words of font info for 98 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,11n,66p,1494b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Users/gebele/AppData/Local/Programs/MiKTeX/fonts/
+enc/dvips/base/8r.enc}<C:/Users/gebele/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gebele/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gebele/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gebele/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/gebele/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gebele/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gebele/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gebele/A
+ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on 20220612_Emotion.pdf (8 pages, 141883 bytes).
+PDF statistics:
+ 70 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
