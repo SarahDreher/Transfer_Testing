@@ -54,15 +54,11 @@ L.~Davoli, M.~Martalo, A.~Cilfone, L.~Belli, G.~Ferrari, R.~Presta,
 M.-H. Huang and R.~T. Rust, ``Artificial intelligence in service,''
   \emph{Journal of Service Research}, vol.~21, no.~2, pp. 155--172, 2018.
 
-\bibitem{kristenfrenchYourNewBest2018}
-K.~French, ``Your new best friend: {{AI}} chatbot,'' 2018, the following values
-  have no corresponding Zotero field:\\ number: 31.05.2021.
-
 \bibitem{huangStrategicFrameworkArtificial2021}
-M.-H. Huang and R.~T. Rust, ``A strategic framework for artificial intelligence
-  in marketing,'' \emph{Journal of the Academy of Marketing Science}, vol.~49,
-  no.~1, pp. 30--50, Jan. 2021, the following values have no corresponding
-  Zotero field:\\ accession-num: WOS:000585729700001.
+------, ``A strategic framework for artificial intelligence in marketing,''
+  \emph{Journal of the Academy of Marketing Science}, vol.~49, no.~1, pp.
+  30--50, Jan. 2021, the following values have no corresponding Zotero field:\\
+  accession-num: WOS:000585729700001.
 
 \bibitem{marin-moralesAffectiveComputingVirtual2018}
 J.~{Mar{\'i}n-Morales}, J.~L. {Higuera-Trujillo}, A.~Greco, J.~Guixeres,
@@ -70,20 +66,6 @@ J.~{Mar{\'i}n-Morales}, J.~L. {Higuera-Trujillo}, A.~Greco, J.~Guixeres,
   computing in virtual reality: Emotion recognition from brain and heartbeat
   dynamics using wearable sensors,'' \emph{Scientific reports}, vol.~8, no.~1,
   pp. 1--15, 2018.
-
-\bibitem{ekmanBasicEmotionsHandbook1999}
-P.~Ekman, ``Basic emotions. {{Handbook}} of cognition and emotion,''
-  \emph{Wiley, New York}, pp. 301--320, 1999.
-
-\bibitem{johnsonAdvancingNeuroscienceWearable2020}
-K.~T. Johnson and R.~W. Picard, ``Advancing {{Neuroscience}} through {{Wearable
-  Devices}},'' \emph{Neuron}, vol. 108, no.~1, pp. 8--12, 2020.
-
-\bibitem{shoumyMultimodalBigData2020}
-N.~J. Shoumy, L.-M. Ang, K.~P. Seng, D.~M. Rahaman, and T.~Zia, ``Multimodal
-  big data affective analytics: {{A}} comprehensive survey using text, audio,
-  visual and physiological signals,'' \emph{Journal of Network and Computer
-  Applications}, vol. 149, p. 102447, 2020.
 
 \bibitem{generosiDeepLearningbasedSystem2018}
 A.~Generosi, S.~Ceccacci, and M.~Mengoni, ``A deep learning-based system to
@@ -118,12 +100,6 @@ O.~S. Ekundayo and S.~Viriri, ``Facial {{Expression Recognition}}: {{A Review}}
   popular Deep CNN \par Summary of experimental results for different models
   and datasets.
 
-\bibitem{gebeleFaceValueImpact2022}
-J.~Gebele, P.~Brune, and S.~Faußer, ``Face {{Value}}: {{On}} the {{Impact}} of
-  {{Annotation}} ({{In-}}){{Consistencies}} and {{Label Ambiguity}} in {{Facial
-  Data}} on {{Emotion Recognition}},'' in \emph{2022 26th {{International
-  Conference}} on {{Pattern Recognition}} ({{ICPR}})}, pp. 2597--2604.
-
 \bibitem{ekmanConstantsCulturesFace1971}
 P.~Ekman and W.~V. Friesen, ``Constants across cultures in the face and
   emotion.'' \emph{Journal of personality and social psychology}, vol.~17,
@@ -143,6 +119,10 @@ A.~Jaison and C.~Deepa, ``A {{Review}} on {{Facial Emotion Recognition}} and
   Biotechnology Research Communications}, vol.~14, no.~5, pp. 154--161, 2021,
   methodological Approach NOT to complex.
 
+\bibitem{ekmanBasicEmotionsHandbook1999}
+P.~Ekman, ``Basic emotions. {{Handbook}} of cognition and emotion,''
+  \emph{Wiley, New York}, pp. 301--320, 1999.
+
 \bibitem{khaireddinFacialEmotionRecognition2021}
 Y.~Khaireddin and Z.~Chen, ``Facial {{Emotion Recognition}}: {{State}} of the
   {{Art Performance}} on {{FER2013}},'' \emph{arXiv:2105.03588 [cs]}, May 2021,
@@ -151,6 +131,12 @@ Y.~Khaireddin and Z.~Chen, ``Facial {{Emotion Recognition}}: {{State}} of the
 \bibitem{quinnRealtimeEmotionRecognition2017}
 M.-A. Quinn, G.~Sivesind, and G.~Reis, ``Real-time emotion recognition from
   facial expressions,'' \emph{Standford University}, 2017.
+
+\bibitem{gebeleFaceValueImpact2022}
+J.~Gebele, P.~Brune, and S.~Fau{\ss}er, ``Face {{Value}}: {{On}} the {{Impact}}
+  of {{Annotation}} ({{In-}}){{Consistencies}} and {{Label Ambiguity}} in
+  {{Facial Data}} on {{Emotion Recognition}},'' \emph{IEEE 26th International
+  Conference on Pattern Recognition}, 2022.
 
 \bibitem{liuAdaptiveDeepMetric2017}
 X.~Liu, B.~V. K.~V. Kumar, J.~You, and P.~Jia, ``Adaptive {{Deep Metric
